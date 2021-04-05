@@ -12,7 +12,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     logout!
-    render 'api/users/show' # Unsure?
+    render 'api/users/show' # Unsure? user info goes the frontend, when no current user, render login page
   end
 
 end
