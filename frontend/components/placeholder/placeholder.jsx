@@ -5,7 +5,7 @@ const Placeholder = (props) => {
 
   return (
     <div>
-      <h1>You are Logged in!</h1>
+      <h1>You are Logged in! {props.currentUser.username}</h1>
       <button onClick={props.logout}>Logout</button>
     </div>
   )
