@@ -23,16 +23,16 @@ const logoutCurrentUser = () => ({
 
 
 // Thunk action
-export const createUser = user => dispatch => (
-  SessionAPIUtil.createUser(user)
+export const createUser = user => dispatch => {
+  return SessionAPIUtil.createUser(user)
     .then(user => dispatch(receiveCurrentUser(user)))
-);
+};
 
-export const login = user => dispatch => (
-  SessionAPIUtil.login(user)
+export const login = user => dispatch => {
+  return SessionAPIUtil.login(user)
     .then(user => dispatch(receiveCurrentUser(user)))
-);
+};
 
-export const logout = () => dispatch => (
-  SessionAPIUtil.logout().then(() => dispatch(logoutCurrentUser()))
-);
+export const logout = () => dispatch => {
+  return SessionAPIUtil.logout().then(() => dispatch(logoutCurrentUser()))
+};
