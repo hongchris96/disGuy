@@ -6,7 +6,15 @@ import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+
+  let preloadedState = undefined;
+  if (window.currentUser) {
+    preloadedState = {
+      session: {currentUser: window.currentUser}
+    };
+  }
+
+  const store = configureStore(preloadedState);
 
   // testing
   window.store = store;

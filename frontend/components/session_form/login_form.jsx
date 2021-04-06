@@ -10,7 +10,8 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.login(this.state);
   }
 
@@ -27,11 +28,11 @@ class LoginForm extends React.Component {
 
           <form>
             <label>EMAIL
-              <input type="text" value={this.state.email} onClick={this.updateInput('email')}/>
+              <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
             </label>
 
             <label>PASSWORD
-              <input type="password" value={this.state.password} onClick={this.updateInput('password')}/>
+              <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
             </label>
 
             <input type="submit" value={this.props.formType}/>

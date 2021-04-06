@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SignUPForm extends React.Component {
+class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,8 @@ class SignUPForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.signup(this.state);
   }
 
@@ -25,15 +26,15 @@ class SignUPForm extends React.Component {
         <h1>Create an account</h1>
         <form>
           <label>EMAIL
-            <input type="text" value={this.state.email} onClick={this.updateInput('email')}/>
+            <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
           </label>
 
           <label>USERNAME
-            <input type="text" value={this.state.username} onClick={this.updateInput('username')}/>
+            <input type="text" value={this.state.username} onChange={this.updateInput('username')}/>
           </label>
 
           <label>PASSWORD
-            <input type="password" value={this.state.password} onClick={this.updateInput('password')}/>
+            <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
           </label>
 
           <input type="submit" value="Continue"/>
@@ -46,4 +47,4 @@ class SignUPForm extends React.Component {
   }
 }
 
-export default SignUPForm;
+export default SignUpForm;
