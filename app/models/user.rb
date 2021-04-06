@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  def self.find_by_credentials(username, peeword)
-    user = User.find_by(username: username)
+  def self.find_by_credentials(email, peeword)
+    user = User.find_by(email: email)
     return user if user && user.is_password?(peeword)
     return nil
   end
