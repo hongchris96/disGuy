@@ -12,9 +12,11 @@ const App = () => {
   return(
     <div>
       <h1>disGuy app.jsx</h1>
-      <Route exact path="/placeholder" component={PlaceholderContainer} />
-      <Route exact path="/login" component={LoginFormContainer} />
-      <Route exact path="/signup" component={SignupFormContainer} />
+      <Switch>
+        <Route exact path="/placeholder" component={PlaceholderContainer} />
+        <Route exact path="/login" component={LoginFormContainer} />
+        <Route exact path="/signup" component={SignupFormContainer} />
+      </Switch>
     </div>
   );
 };

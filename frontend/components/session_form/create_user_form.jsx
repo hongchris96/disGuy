@@ -39,9 +39,7 @@ class SignUpForm extends React.Component {
 
           <input type="submit" value="Continue"/>
         </form>
-        <footer>
-          <p>{this.props.navLink}</p>
-        </footer>
+        <p>{this.props.navLink}</p>
       </div>
     );
   }

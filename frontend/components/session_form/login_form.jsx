@@ -21,8 +21,8 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <div onSubmit={this.handleSubmit} className="login-form-div">
+      <div className="login-form-div">
+        <div onSubmit={this.handleSubmit} className="login-form">
           <h1>Welcome back!</h1>
           <p>We're so excited to see you again!</p>
 
@@ -37,9 +37,7 @@ class LoginForm extends React.Component {
 
             <input type="submit" value={this.props.formType}/>
           </form>
-          <footer>
-            <p>Need an account? {this.props.navLink}</p>
-          </footer>
+          <p>Need an account? {this.props.navLink}</p>
         </div>
 
         <div className="demo-login">
