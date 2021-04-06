@@ -9,6 +9,7 @@ class LoginForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -18,6 +19,14 @@ class LoginForm extends React.Component {
 
   updateInput(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    this.props.login({
+      email: 'starplatinum@gmail.com',
+      password: 'oraora'
+    });
   }
 
   renderLabelTitle(field) {
@@ -66,7 +75,9 @@ class LoginForm extends React.Component {
         </div>
 
         <div className="demo-login">
-          <h1>Demo Login Placeholder</h1>
+          <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
+          <h1>Log in with Demo</h1>
+          <p>Click this button to log in instantly.</p>
         </div>
 
       </div>

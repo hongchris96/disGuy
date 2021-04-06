@@ -26,7 +26,7 @@ class SignUpForm extends React.Component {
       "session-form-label-title": true,
       "err-color": true
     });
-    let message = this.props.errors.find(err => err.toLowerCase().includes(field));
+    let message = this.props.errors.find(err => err.toUpperCase().includes(field));
     if (message === undefined) {
       return (<p className="session-form-label-title">{field}</p>);
     } else {

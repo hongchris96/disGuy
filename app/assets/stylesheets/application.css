@@ -24,16 +24,24 @@
 
 body {
   font-family: 'Florencesans SC';
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(47,49,54);
   color: white;
 }
 
 h1 {
   font-weight: bolder;
-  font-size: 28px;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
 }
 
 input:focus {
+  outline: none;
+}
+
+button:focus {
   outline: none;
 }
 
@@ -41,16 +49,16 @@ input:focus {
 
 .login-form-div {
   border: 1px solid rgb(40, 40, 40);
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgb(26, 26, 26);
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(54, 57, 63);
   color: gray;
-  width: 760px;
+  width: 790px;
   height: 400px;
-  margin-top: 100px;
+  margin-top: 140px;
   position: relative;
   left: 50%;
-  margin-left: -380px;
+  margin-left: -395px;
   display: grid;
   grid-template-columns: 60% 40%;
 }
@@ -60,13 +68,13 @@ input:focus {
 }
 
 .login-form {
-  border: 1px dashed rgb(156, 255, 176);
-  border-radius: 10px;
+  /* border: 1px dashed rgb(156, 255, 176); */
+  border-radius: 5px;
   padding-top: 30px;
   grid-column: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -79,6 +87,7 @@ input:focus {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  /* margin-top: 10px; */
 }
 
 .login-form > form > * {
@@ -86,15 +95,17 @@ input:focus {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 10px;
+  margin: 12px;
 }
 
 .login-form label > input {
-  width: 380px;
-  height: 30px;
+  width: 390px;
+  height: 18px;
+  padding: 10px;
+  font-size: 14px;
   border: 1px solid rgb(26, 26, 26);
-  border-radius: 5px;
-  margin-top: 10px;
+  border-radius: 3px;
+  margin-top: 5px;
   background-color: rgb(46, 46, 46);
   color: white;
 }
@@ -109,15 +120,16 @@ input:focus {
 }
 
 .login-form input[type="submit"] {
-  width: 385px;
-  height: 35px;
+  width: 410px;
+  height: 40px;
   border: none;
-  border-radius: 5px;
-  margin-top: 30px;
+  border-radius: 3px;
+  margin-top: 25px;
+  margin-bottom: 0px;
   background-color: rgb(115, 138, 219);
   color: white;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,25 +140,64 @@ input:focus {
   transition: 0.3s;
 }
 
+.login-form input[type="submit"]:active {
+  background-color: rgb(85, 103, 167);
+}
+
 .login-form > p:last-child {
   align-self: flex-start;
   margin-left: 35px;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  font-size: 13px;
 }
 
 .login-form a{
   color: rgb(115, 138, 219);
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
 }
 
 .demo-login {
-  border: 1px dashed rgb(242, 156, 255);
-  border-radius: 10px;
+  /* border: 1px dashed rgb(242, 156, 255); */
+  border-radius: 5px;
   grid-column: 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.demo-login > h1 {
-  margin: 65px;
+.demo-login > * {
+  margin: 20px;
+}
+
+.demo-login > p:last-child {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.demo-button {
+  height: 170px;
+  width: 170px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(115, 138, 219);
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.demo-button:hover {
+  background-color: rgb(93, 111, 174);
+  transition: 0.3s;
+}
+
+.demo-button:active {
+  background-color: rgb(85, 103, 167);
 }
 
 
@@ -154,16 +205,16 @@ input:focus {
 
 .create-user-div {
   border: 1px solid rgb(40, 40, 40);
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 0 10px rgb(26, 26, 26);
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(54, 57, 63);
   color: gray;
-  width: 470px;
-  height: 520px;
-  margin-top: 50px;
+  width: 480px;
+  height: 530px;
+  margin-top: 60px;
   position: relative;
   left: 50%;
-  margin-left: -230px;
+  margin-left: -240px;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -173,6 +224,7 @@ input:focus {
 
 .create-user-div h1 {
   color: white;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -188,15 +240,17 @@ input:focus {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 10px;
+  margin: 12px;
 }
 
 .create-user-div label > input {
-  width: 380px;
-  height: 30px;
+  width: 390px;
+  height: 18px;
+  padding: 10px;
+  font-size: 14px;
   border: 1px solid rgb(26, 26, 26);
-  border-radius: 5px;
-  margin-top: 10px;
+  border-radius: 3px;
+  margin-top: 5px;
   background-color: rgb(46, 46, 46);
   color: white;
 }
@@ -211,15 +265,15 @@ input:focus {
 }
 
 .create-user-div input[type="submit"] {
-  width: 385px;
-  height: 35px;
+  width: 410px;
+  height: 40px;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   margin-top: 30px;
   background-color: rgb(115, 138, 219);
   color: white;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,13 +284,23 @@ input:focus {
   transition: 0.3s;
 }
 
+.create-user-div input[type="submit"]:active {
+  background-color: rgb(85, 103, 167);
+}
+
 .create-user-div > p:last-child {
   align-self: flex-start;
-  margin-left: 43px;
+  margin-left: 37px;
+  font-size: 13px;
 }
 
 .create-user-div a{
   color: rgb(115, 138, 219);
+  text-decoration: none;
+}
+
+.create-user-div a:hover {
+  text-decoration: underline;
 }
 
 
