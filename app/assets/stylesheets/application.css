@@ -238,3 +238,17 @@ input:focus {
 .create-user-div a{
   color: rgb(115, 138, 219);
 }
+
+
+/* Both form labels */
+.session-form-label-title {
+  font-size: 12px;
+}
+
+.err-message {
+  font-size: 10px;
+}
+
+.err-color {
+  color: red;
+}

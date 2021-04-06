@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -19,6 +20,28 @@ class LoginForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  renderLabelTitle(field) {
+    let errClass = classNames({
+      "session-form-label-title": true,
+      "err-color": true
+    });
+    let message = this.props.errors[0];
+    if (message === undefined) {
+      return (<p className="session-form-label-title">{field}</p>);
+    } else {
+      return (
+        <p className={errClass}>
+          {field}
+          <span className="err-message"> - {message}</span>
+        </p>
+      );
+    }
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   render() {
     return (
       <div className="login-form-div">
@@ -27,11 +50,13 @@ class LoginForm extends React.Component {
           <p>We're so excited to see you again!</p>
 
           <form>
-            <label>EMAIL
+            <label>
+              {this.renderLabelTitle('EMAIL')}
               <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
             </label>
 
-            <label>PASSWORD
+            <label>
+              {this.renderLabelTitle('PASSWORD')}
               <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
             </label>
 

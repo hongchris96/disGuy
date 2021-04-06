@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -20,20 +21,45 @@ class SignUpForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  renderLabelTitle(field) {
+    let errClass = classNames({
+      "session-form-label-title": true,
+      "err-color": true
+    });
+    let message = this.props.errors.find(err => err.toLowerCase().includes(field));
+    if (message === undefined) {
+      return (<p className="session-form-label-title">{field}</p>);
+    } else {
+      return (
+        <p className={errClass}>
+          {field}
+          <span className="err-message"> - {message}</span>
+        </p>
+      );
+    }
+  }
+
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   render() {
     return (
       <div onSubmit={this.handleSubmit} className="create-user-div">
         <h1>Create an account</h1>
         <form>
-          <label>EMAIL
+          <label>
+            {this.renderLabelTitle("EMAIL")}
             <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
           </label>
 
-          <label>USERNAME
+          <label>
+            {this.renderLabelTitle("USERNAME")}
             <input type="text" value={this.state.username} onChange={this.updateInput('username')}/>
           </label>
 
-          <label>PASSWORD
+          <label>
+            {this.renderLabelTitle("PASSWORD")}
             <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
           </label>
 
