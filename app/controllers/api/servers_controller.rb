@@ -7,6 +7,8 @@ class Api::ServersController < ApplicationController
   end
 
   def show
+    @server = Server.find_by(id: params[:id])
+    # render :show
   end
 
   def create
