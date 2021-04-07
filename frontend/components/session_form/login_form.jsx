@@ -55,7 +55,9 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="app-background">
-        <div className="session-form-logo"><Link to="/">DISGUY</Link></div>
+        <div className="session-form-logo">
+          <Link to="/"><img src={window.grayLogoURL} /></Link>
+        </div>
         <div className="login-form-div">
           <div onSubmit={this.handleSubmit} className="login-form">
             <h1>Welcome back!</h1>

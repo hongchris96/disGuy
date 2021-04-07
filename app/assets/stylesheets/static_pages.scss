@@ -32,8 +32,13 @@
 }
 
 .home-div-1 > nav > :first-child {
-  font-size: 20px; // temporary
   margin-left: 40px;
+}
+
+.home-div-1 > nav img {
+  width: 12%;
+  height: 12%;
+  margin-top: 5px;
 }
 
 .home-div-1 > nav > a {

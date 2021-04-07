@@ -8,6 +8,14 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
+    <script type="text/javascript">
+      window.blueLogoURL = "<%= image_url('blue_logo.png') %>";
+    </script>
+
+    <script type="text/javascript">
+      window.grayLogoURL = "<%= image_url('gray_logo.png') %>";
+    </script>
+
     <% if current_user %>
       <script>
         window.currentUser = {

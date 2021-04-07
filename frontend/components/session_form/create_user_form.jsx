@@ -47,7 +47,9 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <div className="app-background">
-        <div className="session-form-logo"><Link to="/">DISGUY</Link></div>
+        <div className="session-form-logo">
+          <Link to="/"><img src={window.grayLogoURL} /></Link>
+        </div>
         <div onSubmit={this.handleSubmit} className="create-user-div">
           <h1>Create an account</h1>
           <form>

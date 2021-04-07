@@ -59,15 +59,22 @@ a {
 .session-form-logo {
   height: 80px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .session-form-logo > a {
   margin-left: 20px;
-  font-size: 20px;
-  color: white;
+  height: 50px;
+  width: 140px;
 }
 
+.session-form-logo > a > img {
+  width: 90%;
+  height: auto;
+  margin-top: 7px;
+  padding-right: 5px;
+}
 
 /* Login form */
 

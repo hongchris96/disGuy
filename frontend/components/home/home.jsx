@@ -7,7 +7,7 @@ const Home = () => {
       <div className="home-div-1">
         <nav>
           <div>
-            <h3>DISGUY LOGO</h3>
+            <img src={window.blueLogoURL} />
           </div>
           <Link to="/login">Login</Link>
         </nav>
