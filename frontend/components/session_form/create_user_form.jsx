@@ -45,27 +45,30 @@ class SignUpForm extends React.Component {
 
   render() {
     return (
-      <div onSubmit={this.handleSubmit} className="create-user-div">
-        <h1>Create an account</h1>
-        <form>
-          <label>
-            {this.renderLabelTitle("EMAIL")}
-            <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
-          </label>
+      <div className="app-background">
+        <div>DISGUY</div>
+        <div onSubmit={this.handleSubmit} className="create-user-div">
+          <h1>Create an account</h1>
+          <form>
+            <label>
+              {this.renderLabelTitle("EMAIL")}
+              <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
+            </label>
 
-          <label>
-            {this.renderLabelTitle("USERNAME")}
-            <input type="text" value={this.state.username} onChange={this.updateInput('username')}/>
-          </label>
+            <label>
+              {this.renderLabelTitle("USERNAME")}
+              <input type="text" value={this.state.username} onChange={this.updateInput('username')}/>
+            </label>
 
-          <label>
-            {this.renderLabelTitle("PASSWORD")}
-            <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
-          </label>
+            <label>
+              {this.renderLabelTitle("PASSWORD")}
+              <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
+            </label>
 
-          <input type="submit" value="Continue"/>
-        </form>
-        <p>{this.props.navLink}</p>
+            <input type="submit" value="Continue"/>
+          </form>
+          <p>{this.props.navLink}</p>
+        </div>
       </div>
     );
   }

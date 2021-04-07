@@ -12,9 +12,6 @@ import PlaceholderContainer from './placeholder/placeholder_container';
 const App = () => {
   return(
     <div>
-      <div>
-        <h1>DISGUY</h1>
-      </div>
       <Switch>
         <ProtectedRoute exact path="/placeholder" component={PlaceholderContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />

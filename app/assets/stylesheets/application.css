@@ -22,21 +22,6 @@
   src: url('florencesans-sc/Florsn17.ttf') format('truetype');
 } */
 
-body {
-  font-family: 'Florencesans SC';
-  background-color: rgb(47,49,54);
-  color: white;
-}
-
-h1 {
-  font-weight: bolder;
-  font-size: 24px;
-}
-
-p {
-  font-size: 16px;
-}
-
 input:focus {
   outline: none;
 }
@@ -44,6 +29,29 @@ input:focus {
 button:focus {
   outline: none;
 }
+
+/* background for login and signup */
+
+.app-background {
+  font-family: 'Florencesans SC';
+  background-color: rgb(47,49,54);
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.app-background h1 {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.app-background p {
+  font-size: 16px;
+}
+
 
 /* Login form */
 
@@ -87,7 +95,6 @@ button:focus {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* margin-top: 10px; */
 }
 
 .login-form > form > * {

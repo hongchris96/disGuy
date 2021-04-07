@@ -53,33 +53,35 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-div">
-        <div onSubmit={this.handleSubmit} className="login-form">
-          <h1>Welcome back!</h1>
-          <p>We're so excited to see you again!</p>
+      <div className="app-background">
+        <div>DISGUY</div>
+        <div className="login-form-div">
+          <div onSubmit={this.handleSubmit} className="login-form">
+            <h1>Welcome back!</h1>
+            <p>We're so excited to see you again!</p>
 
-          <form>
-            <label>
-              {this.renderLabelTitle('EMAIL')}
-              <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
-            </label>
+            <form>
+              <label>
+                {this.renderLabelTitle('EMAIL')}
+                <input type="text" value={this.state.email} onChange={this.updateInput('email')}/>
+              </label>
 
-            <label>
-              {this.renderLabelTitle('PASSWORD')}
-              <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
-            </label>
+              <label>
+                {this.renderLabelTitle('PASSWORD')}
+                <input type="password" value={this.state.password} onChange={this.updateInput('password')}/>
+              </label>
 
-            <input type="submit" value={this.props.formType}/>
-          </form>
-          <p>Need an account? {this.props.navLink}</p>
+              <input type="submit" value={this.props.formType}/>
+            </form>
+            <p>Need an account? {this.props.navLink}</p>
+          </div>
+
+          <div className="demo-login">
+            <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
+            <h1>Log in with Demo</h1>
+            <p>Click this button to log in instantly.</p>
+          </div>
         </div>
-
-        <div className="demo-login">
-          <button className="demo-button" onClick={this.demoLogin}>Demo Login</button>
-          <h1>Log in with Demo</h1>
-          <p>Click this button to log in instantly.</p>
-        </div>
-
       </div>
     );
   }
