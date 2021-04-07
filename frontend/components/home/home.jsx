@@ -18,7 +18,7 @@ const Home = () => {
             handful of friends that want to spend time together, disGuy makes it easy to talk every day 
             and hang out more often.</p>
           <div className="home-body-1-buttons">
-            <a href="https://github.com/hongchris96/disGuy">Click for Github</a>
+            <a href="https://github.com/hongchris96/disGuy" target="_blank">Click for Github</a>
             <Link to="/login">Open disGuy in your browser</Link>
           </div>
         </div>
