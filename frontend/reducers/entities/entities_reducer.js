@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-// import serverReducers
+import ServersReducer from './server_entity/servers_reducer';
 // import textChannelReducers
 // import textChannelMessageReducers
 // import directMessageChannelReducers
@@ -7,6 +7,7 @@ import {combineReducers} from 'redux';
 // import others?
 
 const EntitiesReducer = combineReducers({
+  servers: ServersReducer
   // going to add other tables
 });
 
