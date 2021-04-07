@@ -5,6 +5,15 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
+  has_many :owned_servers,
+    foreign_key: :host_id,
+    class_name: :Server
+  
+  has_many :cohosted_servers,
+    foreign_key: :cohost_id,
+    class_name: :Server
+
+
   attr_reader :password
 
   def self.find_by_credentials(email, peeword)
