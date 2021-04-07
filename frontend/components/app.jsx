@@ -9,6 +9,8 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/create_user_form_container';
 import PlaceholderContainer from './placeholder/placeholder_container';
 
+import ServerListContainer from './server/server_list_container';
+
 // import list of containers
 
 const App = () => {
