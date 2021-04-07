@@ -17,10 +17,10 @@
  
 @import "css_reset.css";
 
-@font-face {
+/* @font-face {
   font-family: 'Florencesans SC';
-  src: url('florencesans-sc/Florsn17.ttf') format('truetype');;
-}
+  src: url('florencesans-sc/Florsn17.ttf') format('truetype');
+} */
 
 body {
   font-family: 'Florencesans SC';
