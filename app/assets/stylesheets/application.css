@@ -52,7 +52,7 @@ button:focus {
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(26, 26, 26);
   background-color: rgb(54, 57, 63);
-  color: gray;
+  color:rgb(140,148,148);
   width: 790px;
   height: 400px;
   margin-top: 140px;
@@ -103,10 +103,10 @@ button:focus {
   height: 18px;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid rgb(26, 26, 26);
+  border: 1px solid rgb(34, 37, 41);
   border-radius: 3px;
   margin-top: 5px;
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(48, 51, 57);
   color: white;
 }
 
@@ -208,7 +208,7 @@ button:focus {
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(26, 26, 26);
   background-color: rgb(54, 57, 63);
-  color: gray;
+  color: rgb(140,148,148);
   width: 480px;
   height: 530px;
   margin-top: 60px;
@@ -248,10 +248,10 @@ button:focus {
   height: 18px;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid rgb(26, 26, 26);
+  border: 1px solid rgb(34, 37, 41);
   border-radius: 3px;
   margin-top: 5px;
-  background-color: rgb(46, 46, 46);
+  background-color: rgb(48, 51, 57);
   color: white;
 }
 
