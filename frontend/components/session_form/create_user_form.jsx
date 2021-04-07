@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import {Link} from 'react-router-dom';
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <div className="app-background">
-        <div>DISGUY</div>
+        <div className="session-form-logo"><Link to="/">DISGUY</Link></div>
         <div onSubmit={this.handleSubmit} className="create-user-div">
           <h1>Create an account</h1>
           <form>

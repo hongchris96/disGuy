@@ -56,6 +56,18 @@ a {
   font-size: 16px;
 }
 
+.session-form-logo {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.session-form-logo > a {
+  margin-left: 20px;
+  font-size: 20px;
+  color: white;
+}
+
 
 /* Login form */
 
@@ -67,7 +79,7 @@ a {
   color:rgb(140,148,148);
   width: 790px;
   height: 400px;
-  margin-top: 140px;
+  margin-top: 80px;
   position: relative;
   left: 50%;
   margin-left: -395px;
@@ -222,7 +234,7 @@ a {
   color: rgb(140,148,148);
   width: 480px;
   height: 530px;
-  margin-top: 60px;
+  margin-top: 2px;
   position: relative;
   left: 50%;
   margin-left: -240px;
