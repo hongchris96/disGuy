@@ -3,11 +3,23 @@ import React from 'react';
 class ServerShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      dropdownVisible: false
+    };
+
+    this.openServerSetting = this.openServerSetting.bind(this);
   }
 
   componentDidMount() {
     this.props.requestServer(this.props.match.params.serverId);
   }
+
+  openServerSetting(e) {
+    e.preventDefault();
+    console.log('clicked!');
+    this.setState(prevState => ({ dropdownVisible: !prevState.dropdownVisible }));
+  }
+  
 
   render() {
 
@@ -17,11 +29,11 @@ class ServerShow extends React.Component {
 
     return (
       <div className="channel-sidebar">
-        <nav className="server-show">
+        <nav className="server-show" onClick={this.openServerSetting} >
           <h3>{this.props.server.server_name}</h3>
-          <p>{`\u25BE`}</p>
+          <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
         </nav>
-        <div className="server-setting-dropdown">
+        <div className={`server-setting-dropdown ${this.state.dropdownVisible ? "" : "hidden"}`}>
           <h3>Drop here</h3>
           <p>Server Settings Gear icon</p>
         </div>

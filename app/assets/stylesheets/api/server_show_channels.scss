@@ -20,12 +20,45 @@
   margin: 18px
 }
 
-// temporary
 .server-show > p {
   color: rgb(180,180,188);
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .server-setting-dropdown {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 86px;
+  background-color: rgb(24,25,28);
+  color: rgb(185,187,190);
+  border-radius: 5px;
+  height: 100px;
+  width: 220px;
+  padding-top: 8px;
+}
+
+.server-setting-dropdown > * {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 0px;
+  margin-top: 3px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.server-setting-dropdown > *:hover {
+  color: white;
+  background-color: rgb(120,140,220);
+  transition: 0.3s;
+}
+
+.hidden {
   display: none;
 }
 
@@ -38,7 +71,7 @@
   margin-left: 16px;
   margin-right: 16px;
   margin-top: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   font-size: 12px;
   font-weight: bolder;
   text-transform: uppercase;
