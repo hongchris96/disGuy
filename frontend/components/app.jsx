@@ -7,7 +7,7 @@ import Page404 from './404page/four_o_four';
 
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/create_user_form_container';
-import PlaceholderContainer from './placeholder/placeholder_container';
+import MotherContainer from './mother/mother_container';
 
 import ServerListContainer from './server/server_list_container';
 
@@ -18,7 +18,7 @@ const App = () => {
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <ProtectedRoute exact path="/placeholder" component={PlaceholderContainer} />
+        <ProtectedRoute exact path="/servers" component={MotherContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <Route component={Page404} />

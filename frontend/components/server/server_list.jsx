@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom;'
+import {Link} from 'react-router-dom';
 
 class ServerList extends React.Component {
   constructor(props){
@@ -13,6 +13,7 @@ class ServerList extends React.Component {
   render(){
     return (
       <div className="server-sidebar">
+        <div>Some Text</div>
         <ul>
           {/* <li> Link to home with direct message lists */}
 
