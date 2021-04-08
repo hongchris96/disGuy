@@ -3,19 +3,23 @@ import React from 'react';
 class ServerShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.server;
   }
 
   componentDidMount() {
-    this.props.requestServer(this.props.server.id);
+    this.props.requestServer(this.props.match.params.serverId);
   }
 
   render() {
+
+    if (this.props.server === undefined) {
+      return null;
+    }
+
     return (
       <div className="channel-sidebar">
         <nav className="server-show">
-          <h3>{this.state.server_name}</h3>
-          <p>^</p>
+          <h3>{this.props.server.server_name}</h3>
+          <p>{`\u25BE`}</p>
         </nav>
         <div className="server-setting-dropdown">
           <h3>Drop here</h3>
@@ -24,14 +28,13 @@ class ServerShow extends React.Component {
 
         {/* render ChannelIndex pass in props */}
         <div className="channel-list">
-          <h3>Text Channel <span>+</span></h3>
+          <h3>Text Channels <span>+</span></h3>
           <ul>
             <li>#general</li>
             <li>#introduction</li>
           </ul>
         </div>
 
-        
       </div>
     );
   }

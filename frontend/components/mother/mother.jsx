@@ -13,7 +13,7 @@ const Mother = () => {
       <ServerListContainer />
       <Switch>
         <Route exact path="/servers/@me" component={LandingZoneContainer} />
-        <Route exact path='/servers/:serverId' component={ServerShowContainer} />
+        <Route path='/servers/:serverId' component={ServerShowContainer} />
       </Switch>
     </div>
   )

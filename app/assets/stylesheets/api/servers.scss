@@ -80,7 +80,12 @@
 }
 
 .server-list > li > a {
+  width: 100%;
+  height: 100%;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .server-list > li:hover {

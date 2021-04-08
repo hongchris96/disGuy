@@ -6,4 +6,70 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.server-show:hover {
+  background-color: rgb(52,55,60);
+  transition: 0.3s;
+}
+
+.server-show > * {
+  margin: 18px
+}
+
+// temporary
+.server-show > p {
+  color: rgb(180,180,188);
+}
+
+.server-setting-dropdown {
+  display: none;
+}
+
+.channel-list {
+  padding-top: 10px;
+  color: rgb(142,146,151);
+}
+
+.channel-list > h3 {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.channel-list > h3 > span {
+  font-size: 18px;
+}
+
+.channel-list > h3:hover {
+  color: white;
+  transition: 0.3s;
+}
+
+.channel-list > ul > li {
+  padding: 8px;
+  margin-bottom: 5px;
+  margin-left: 16px;
+  margin-right: 12px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.channel-list > ul > li:hover {
+  background-color: ivory;
+  color: black;
+  transition: 0.3s;
 }
