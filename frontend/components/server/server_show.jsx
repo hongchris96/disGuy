@@ -6,13 +6,17 @@ class ServerShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestServer();
+    this.props.requestServer(this.props.server.id);
   }
 
   render() {
     return (
-      <div>
-        <h1>Blah</h1>
+      <div className="channel-sidebar">
+        <nav>
+          <h3>{this.props.server.server_name}</h3>
+          {/* render ChannelIndex pass in props */}
+        </nav>
+
       </div>
     );
   }

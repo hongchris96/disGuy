@@ -17,7 +17,7 @@ class ServerList extends React.Component {
       <div className="server-sidebar">
         <ul className="server-list">
           {/* <li> Link to home with direct message lists */}
-          <li><img src={houseURL}/></li>
+          <li><Link to="/servers/@me"><img src={houseURL}/></Link></li>
           <li> </li>
 
           {this.props.servers.map(server => {
