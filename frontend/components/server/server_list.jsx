@@ -18,7 +18,7 @@ class ServerList extends React.Component {
         <ul className="server-list">
           {/* <li> Link to home with direct message lists */}
           <li>Home</li>
-          <li>____</li>
+          <li> </li>
 
           {this.props.servers.map(server => {
             return (<ServerListItem 
@@ -29,7 +29,7 @@ class ServerList extends React.Component {
 
           {/* <li> Click to add server to list,
           leads to modal to join server or create server */}
-          <li>+</li>
+          <li className="add-server">+</li>
         </ul>
       </div>
     );
