@@ -7,7 +7,7 @@ const mapSTP = state => ({
 });
 
 const mapDTP = dispatch => ({
-  requestServers: () => dispatch(requestServers)
+  requestServers: () => dispatch(requestServers())
 });
 
 export default connect(mapSTP, mapDTP)(ServerList);

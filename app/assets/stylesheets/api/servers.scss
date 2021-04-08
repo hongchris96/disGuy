@@ -1,3 +1,79 @@
 // Place all the styles related to the Api::Servers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mother {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
+}
+
+/* side bar with server list */
+
+.server-sidebar {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 1px solid black;
+}
+
+.server-list > li:first-child {
+  margin-bottom: 10px;
+  background-color: aqua;
+}
+
+.server-list > li:nth-child(2) {
+  position: relative;
+  bottom: 6px;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  height: 1px;
+}
+
+.server-list > li {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* mother-body */
+
+.mother-body {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mother-body > h1 {
+  font-size: 40px;
+  padding: 20px;
+}
+
+.mother-body > button {
+  width: 300px;
+  height: 100px;
+  background-color: rgb(115, 159, 233);
+  color: blue;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.mother-body > button:hover {
+  background-color: rgb(104, 116, 230);
+  transition: 0.3s;
+} 

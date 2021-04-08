@@ -7,10 +7,12 @@ class ServerListItem extends React.Component {
   }
 
   render(){
+    const shortenDisplay = this.props.server.server_name.slice(0, 4);
+
     return (
       <li className="server-list-icon">
         {/* <Link to="servershow"></Link> */}
-        <h2>A</h2>
+        {shortenDisplay}
       </li>
     );
   }

@@ -7,10 +7,12 @@ import ServerListContainer from '../server/server_list_container';
 
 const Mother = (props) => {
   return (
-    <div>
+    <div className="mother">
       <ServerListContainer />
-      <h1>You are Logged in! {props.currentUser.username}</h1>
-      <button onClick={props.logout}>Logout</button>
+      <div className="mother-body">
+        <h1>You are Logged in! {props.currentUser.username}</h1>
+        <button onClick={props.logout}>Logout</button>
+      </div>
     </div>
   )
 }
