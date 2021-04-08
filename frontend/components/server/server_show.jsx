@@ -3,6 +3,7 @@ import React from 'react';
 class ServerShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props.server;
   }
 
   componentDidMount() {
@@ -12,11 +13,25 @@ class ServerShow extends React.Component {
   render() {
     return (
       <div className="channel-sidebar">
-        <nav>
-          <h3>{this.props.server.server_name}</h3>
-          {/* render ChannelIndex pass in props */}
+        <nav className="server-show">
+          <h3>{this.state.server_name}</h3>
+          <p>^</p>
         </nav>
+        <div className="server-setting-dropdown">
+          <h3>Drop here</h3>
+          <p>Server Settings Gear icon</p>
+        </div>
 
+        {/* render ChannelIndex pass in props */}
+        <div className="channel-list">
+          <h3>Text Channel <span>+</span></h3>
+          <ul>
+            <li>#general</li>
+            <li>#introduction</li>
+          </ul>
+        </div>
+
+        
       </div>
     );
   }
