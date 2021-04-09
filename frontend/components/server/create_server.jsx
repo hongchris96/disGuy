@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router";
 
 class CreateServerForm extends React.Component {
   constructor(props){
@@ -10,6 +11,9 @@ class CreateServerForm extends React.Component {
 
   handleSubmit() {
     this.props.createServer(this.state);
+    this.props.closeModal();
+    // console.log(this.props.allServerIds);
+    // return () => <Redirect to={`/servers/${this.props.allServerIds[allServerIds.length - 1]}`} />
   }
 
   updateInput(field) {

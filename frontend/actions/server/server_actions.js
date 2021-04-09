@@ -21,7 +21,10 @@ const removeServer = serverId => ({
   serverId
 });
 
-// receiveServerErrors ?
+const receiveServerErrors = errors => ({
+  type: RECEIVE_SERVER_ERRORS,
+  errors
+});
 
 export const requestServers = () => dispatch => {
   return ServerAPIUtil.fetchServers().then(servers => dispatch(receiveServers(servers)));
@@ -32,7 +35,9 @@ export const requestServer = (serverId) => dispatch => {
 };
 
 export const createServer = (server) => dispatch => {
-  return ServerAPIUtil.createServer(server).then(server => dispatch(receiveServer(server)));
+  return ServerAPIUtil.createServer(server)
+    .then(server => (dispatch(receiveServer(server))),
+    err => (dispatch(receiveServerErrors(err.responseJSON))));
 };
 
 export const updateServer = (server) => dispatch => {

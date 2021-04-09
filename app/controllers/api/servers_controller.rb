@@ -13,6 +13,7 @@ class Api::ServersController < ApplicationController
   end
 
   def create
+    # debugger
     @server = Server.new(server_params)
     if @server.save
       render :show
@@ -47,6 +48,6 @@ class Api::ServersController < ApplicationController
   private
   
   def server_params
-    params.require(:server).permit(:server_name, :host_id, :cohost_id)
+    params.require(:server).permit(:server_name, :host_id)
   end
 end

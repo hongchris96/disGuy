@@ -8,10 +8,6 @@ class User < ApplicationRecord
   has_many :owned_servers,
     foreign_key: :host_id,
     class_name: :Server
-  
-  has_many :cohosted_servers,
-    foreign_key: :cohost_id,
-    class_name: :Server
 
 
   attr_reader :password
