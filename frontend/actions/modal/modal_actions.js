@@ -8,7 +8,7 @@ export const openModal = componentName => ({
   componentName
 });
 
-export const closeModal = componentName => ({
+export const closeModal = ()=> ({
   type: CLOSE_MODAL
 });
 

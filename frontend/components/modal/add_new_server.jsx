@@ -1,5 +1,5 @@
 import React from 'react';
-import CreateServerContainer from '../server/create_server_container';
+// import CreateServerContainer from '../server/create_server_container';
 
 class AddNewServer extends React.Component {
   constructor(props){
@@ -9,22 +9,29 @@ class AddNewServer extends React.Component {
   render() {
 
     return (
-      <div className="plus-server">
-        <p>x</p>
-        <div className="modal-create-server">
-          <h1>Create a server</h1>
-          <p>Your server is where you and your subordinates hang out. 
-            Make yours and start chatting.</p>
-          <p>Create my own</p>
+      <div>
+        <div className="plus-server">
+          <p className="close-modal" onClick={() => this.props.closeModal()}>{`\u2715`}</p>
+          <div className="modal-go-create-server">
+            <h1>Create a server</h1>
+            <p>Your server is where you and your subordinates hang out. 
+              Make yours and start chatting.</p>
+            <div className="redirect-create-server" onClick={() => this.props.openModal("CreateServer")}>
+              <div>
+                <img src={window.createServerURL}/>
+                <p>Create My Own</p>
+              </div>
+              <p>{`\u203A`}</p>
+            </div>
+          </div>
+
+          <div className="modal-go-join-server">
+            <h1>Have an invite already?</h1>
+            <p>Join a server {`(inactive)`}</p>
+          </div>
         </div>
 
-        <div className="modal-join-server">
-          <h1>Have an invite already?</h1>
-          <button>Join a server</button>
-        </div>
-
-        {/* invisible components */}
-        {/* <CreateServerContainer /> */}
+        <div className="blurred-background"></div>
       </div>
     );
   }

@@ -22,22 +22,28 @@ class CreateServerForm extends React.Component {
 
   render(){
     return(
-      <form className="create-server-form" onSubmit={this.handleSubmit}>
-        <div className="create-server-heading">
-          <h1>Customize your server</h1>
-          <p>Give your new server a personality with a name.</p>
-          <p>You can always change it later.</p>
-        </div>
-        <label>SERVER NAME
-          <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
-        </label>
-        <p>By creating a server, you agree to disGuy's Community Guidelines.</p>
+      <div>
+        <form className="create-server-form" onSubmit={this.handleSubmit}>
+          <p onClick={this.props.closeModal()}>{`\u2715`}</p>
+          <div className="create-server-heading">
+            <h1>Customize your server</h1>
+            <p>Give your new server a personality with a name.</p>
+            <p>You can always change it later.</p>
+          </div>
+          <label>SERVER NAME
+            <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
+          </label>
+          <p>By creating a server, you agree to disGuy's Community Guidelines.</p>
 
-        <div className="create-server-buttons">
-          <button>Back</button>
-          <input type="submit" value="Create"/>
-        </div>
-      </form>
+          <div className="create-server-buttons">
+            <p onClick={this.props.openModal("AddNewServer")}>Back</p>
+            <input type="submit" value="Create"/>
+          </div>
+        </form>
+
+        <div className="blurred-background"></div>
+
+      </div>
     );
   }
 }

@@ -29,7 +29,7 @@ class ServerList extends React.Component {
 
           {/* <li> Click to add server to list,
           leads to modal to join server or create server */}
-          <li className="add-server">+</li>
+          <li className="add-server" onClick={() => this.props.openModal("AddNewServer")}>+</li>
         </ul>
       </div>
     );

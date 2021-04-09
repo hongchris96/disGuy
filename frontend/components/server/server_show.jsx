@@ -33,16 +33,16 @@ class ServerShow extends React.Component {
           <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
         </nav>
         <div className={`server-setting-dropdown ${this.state.dropdownVisible ? "" : "hidden"}`}>
-          <h3>Drop here</h3>
+          <h3>Drop here {`(inactive)`}</h3>
           <p>Server Settings Gear icon</p>
         </div>
 
         {/* render ChannelIndex pass in props */}
         <div className="channel-list">
-          <h3>Text Channels <span>+</span></h3>
+          <h3>Text Channels {`(inactive)`}<span>+</span></h3>
           <ul>
-            <li>#general</li>
-            <li>#introduction</li>
+            <li>#general {`(inactive)`}</li>
+            <li>#introduction {`(inactive)`}</li>
           </ul>
         </div>
 

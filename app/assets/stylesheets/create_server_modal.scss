@@ -1,0 +1,18 @@
+.create-server-form {
+  background-color: white;
+  z-index: 120;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 440px;
+  height: 560px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Whitney";
+}
