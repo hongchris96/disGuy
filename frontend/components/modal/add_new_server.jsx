@@ -1,5 +1,5 @@
 import React from 'react';
-// import CreateServerContainer from '../server/create_server_container';
+import CreateServerContainer from '../server/create_server_container';
 
 class AddNewServer extends React.Component {
   constructor(props){

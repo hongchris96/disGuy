@@ -24,19 +24,20 @@ class CreateServerForm extends React.Component {
     return(
       <div>
         <form className="create-server-form" onSubmit={this.handleSubmit}>
-          <p onClick={this.props.closeModal()}>{`\u2715`}</p>
+          <p className="close-modal" onClick={() => this.props.closeModal()}>{`\u2715`}</p>
           <div className="create-server-heading">
             <h1>Customize your server</h1>
             <p>Give your new server a personality with a name.</p>
             <p>You can always change it later.</p>
           </div>
-          <label>SERVER NAME
+          <img className="upload-img" src={window.noUploadURL}/>
+          <label><p>SERVER NAME</p>
             <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
           </label>
-          <p>By creating a server, you agree to disGuy's Community Guidelines.</p>
+          <p className="undernote">By creating a server, you agree to disGuy's <span>Community Guidelines</span>.</p>
 
           <div className="create-server-buttons">
-            <p onClick={this.props.openModal("AddNewServer")}>Back</p>
+            <p onClick={() => this.props.openModal("AddNewServer")}>Back</p>
             <input type="submit" value="Create"/>
           </div>
         </form>

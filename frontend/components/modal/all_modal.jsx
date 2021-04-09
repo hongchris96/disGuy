@@ -9,10 +9,10 @@ class AllModal extends React.Component {
   }
 
   render() {
-
-    let whichModal = null;
+    let whichModal;
     if (this.props.modal === "CreateServer") whichModal = <CreateServerContainer />;
     else if (this.props.modal === "AddNewServer") whichModal = <AddNewServerContainer />;
+    else whichModal = null;
 
     return (
       <div>
