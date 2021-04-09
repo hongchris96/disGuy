@@ -3,6 +3,7 @@ import SessionErrorsReducer from './session_errors_reducer';
 
 const ErrorReducer = combineReducers({
   session: SessionErrorsReducer
+  // server: ServerErrorsReducer
 });
 
 export default ErrorReducer;

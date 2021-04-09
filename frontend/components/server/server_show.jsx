@@ -16,10 +16,9 @@ class ServerShow extends React.Component {
 
   openServerSetting(e) {
     e.preventDefault();
-    console.log('clicked!');
     this.setState(prevState => ({ dropdownVisible: !prevState.dropdownVisible }));
   }
-  
+
 
   render() {
 
