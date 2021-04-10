@@ -7,10 +7,12 @@ class EditServerForm extends React.Component {
     this.state = this.props.server;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleSubmit() {
     this.props.updateServer(this.state);
+    this.props.closeEditSetting();
   }
 
   updateInput(field) {
@@ -18,6 +20,11 @@ class EditServerForm extends React.Component {
   }
 
   handleClose() {
+    this.props.closeEditSetting();
+  }
+
+  handleDelete() {
+    this.props.deleteServer();
     this.props.closeEditSetting();
   }
 
@@ -33,7 +40,9 @@ class EditServerForm extends React.Component {
         <div className="edit-server-sidebar">
           <h1>{this.props.server.server_name}</h1>
           <p>Overview</p>
-          <p className="delete-server">Delete Server</p> {/* Will be link or button */}
+          <p className="delete-server" onClick={this.handleDelete}>
+            Delete Server
+          </p>
         </div>
         <div className="edit-server-body">
           <form className="edit-server-form" onSubmit={this.handleSubmit}>

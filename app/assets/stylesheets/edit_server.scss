@@ -142,6 +142,7 @@
   letter-spacing: 0.5px;
   color: white;
   background-color: rgb(83,181,130);
+  cursor: pointer;
 }
 
 .edit-server-content > input[type="submit"]:hover {
@@ -169,6 +170,10 @@
   cursor: pointer;
   border: 2px solid rgb(167,171,176);
   border-radius: 19px;
+}
+
+.close-edit-server-button:hover {
+  background-color: rgb(72,76,82);
 }
 
 .close-edit-server > p:last-of-type {
