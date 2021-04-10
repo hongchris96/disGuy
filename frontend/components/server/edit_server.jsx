@@ -6,19 +6,24 @@ class EditServerForm extends React.Component {
 
     this.state = this.props.server;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   handleSubmit() {
-    this.props.createServer(this.state);
+    this.props.updateServer(this.state);
   }
 
   updateInput(field) {
     return e => this.setState({[field]: e.currentTarget.value});
   }
 
+  handleClose() {
+    this.props.closeEditSetting();
+  }
+
   componentDidMount(){
     this.props.clearErrors();
-    this.props.requestServer(this.props.match.params.serverId);
+    this.props.requestServer(this.props.server.id);
   }
 
   render(){
@@ -28,19 +33,27 @@ class EditServerForm extends React.Component {
         <div className="edit-server-sidebar">
           <h1>{this.props.server.server_name}</h1>
           <p>Overview</p>
-          <p>Delete Server</p> {/* Will be link or button */}
+          <p className="delete-server">Delete Server</p> {/* Will be link or button */}
         </div>
+        <div className="edit-server-body">
+          <form className="edit-server-form" onSubmit={this.handleSubmit}>
+            <div className="close-edit-server">
+              <p className="close-edit-server-button" onClick={this.handleClose}>{`\u2715`}</p>
+              <p>ESC</p>
+            </div>
+            <div className="edit-server-heading">
+              <h1>Server Overview</h1>
+            </div>
+            <div className="edit-server-content">
+              <label className="edit-input-place">
+                <p>SERVER NAME</p>
+                <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
+              </label>
 
-        <form className="edit-server-form" onSubmit={this.handleSubmit}>
-          <div className="edit-server-heading">
-            <h1>Server Overview</h1>
-          </div>
-          <label>SERVER NAME
-            <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
-          </label>
-
-          <input type="submit" value="Save Changes"/>
-        </form>
+              <input type="submit" value="Save Changes"/>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

@@ -6,14 +6,15 @@ class CreateServerForm extends React.Component {
     super(props);
 
     this.state = this.props.server;
+    this.state.redirectToCreatedServer = false;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.createServer(this.state);
-    this.props.closeModal();
-    // console.log(this.props.allServerIds);
-    // return () => <Redirect to={`/servers/${this.props.allServerIds[allServerIds.length - 1]}`} />
+    this.setState({redirectToCreatedServer: true})
+    // this.props.closeModal();
   }
 
   updateInput(field) {
@@ -25,6 +26,14 @@ class CreateServerForm extends React.Component {
   }
 
   render(){
+
+    let redirectToServer = this.state.redirectToCreatedServer;
+    let serverLast = this.props.allServerIds[this.props.allServerIds.length - 1];
+    let serverLoc = Number(serverLast);
+    if (redirectToServer) {
+      return <Redirect to={`/servers/${serverLoc}`} />
+    }
+
     return(
       <div>
         <form className="create-server-form" onSubmit={this.handleSubmit}>

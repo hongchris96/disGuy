@@ -1,17 +1,21 @@
 import React from 'react';
+import EditServerContainer from './edit_server_container';
 
 class ServerShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropdownVisible: false
+      dropdownVisible: false,
+      editVisible: false
     };
 
     this.openServerSetting = this.openServerSetting.bind(this);
+    this.openEditServer = this.openEditServer.bind(this);
   }
 
   componentDidMount() {
     this.props.requestServer(this.props.match.params.serverId);
+    // this.props.closeModal();
   }
 
   openServerSetting(e) {
@@ -19,6 +23,13 @@ class ServerShow extends React.Component {
     this.setState(prevState => ({ dropdownVisible: !prevState.dropdownVisible }));
   }
 
+  openEditServer(e) {
+    // e.preventDefault();
+    this.setState(prevState => ({
+      dropdownVisible: false, 
+      editVisible: !prevState.editVisible 
+    }));
+  }
 
   render() {
 
@@ -33,8 +44,10 @@ class ServerShow extends React.Component {
           <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
         </nav>
         <div className={`server-setting-dropdown ${this.state.dropdownVisible ? "" : "hidden"}`}>
-          <h3>Drop here {`(inactive)`}</h3>
-          <p>Server Settings Gear icon</p>
+          <p onClick={this.openEditServer}>Server Settings Gear icon</p>
+        </div>
+        <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
+          <EditServerContainer server={this.props.server} closeEditSetting={this.openEditServer}/>
         </div>
 
         {/* render ChannelIndex pass in props */}
