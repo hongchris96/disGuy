@@ -14,6 +14,7 @@ class ServerShow extends React.Component {
   }
 
   componentDidMount() {
+    console.log("Show mounted");
     this.props.requestServer(this.props.match.params.serverId);
   }
 
@@ -52,7 +53,7 @@ class ServerShow extends React.Component {
           <p onClick={this.openEditServer}>Server Settings Gear icon</p>
         </div>
         <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
-          <EditServerContainer server={this.props.server} closeEditSetting={this.openEditServer}/>
+          <EditServerContainer server={this.props.server} showPageProps={this.props} closeEditSetting={this.openEditServer}/>
         </div>
 
         {/* render ChannelIndex pass in props */}

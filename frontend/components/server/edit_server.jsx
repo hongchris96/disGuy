@@ -14,7 +14,6 @@ class EditServerForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-    // this.updateEditState = this.updateEditState.bind(this);
   }
 
   handleSubmit() {
@@ -32,13 +31,16 @@ class EditServerForm extends React.Component {
   }
 
   handleDelete() {
+    // debugger
     this.props.deleteServer(this.props.server.id);
-    this.props.closeEditSetting();
-    // return <Redirect to="/servers/@me" />
+    this.props.closeEditSetting(); // might not need
+    this.props.showPageProps.history.push('/servers/@me');
+    console.log("Delete action done");
   }
 
   componentDidMount(){
     this.props.clearErrors();
+    console.log("Edit mounted");
     this.props.requestServer(this.props.server.id);
   }
 
