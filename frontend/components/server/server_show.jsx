@@ -15,7 +15,6 @@ class ServerShow extends React.Component {
 
   componentDidMount() {
     this.props.requestServer(this.props.match.params.serverId);
-    // this.props.closeModal();
   }
 
   openServerSetting(e) {

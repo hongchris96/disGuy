@@ -1,10 +1,12 @@
 import React from "react";
+import { Redirect } from "react-router";
 
 class EditServerForm extends React.Component {
   constructor(props){
     super(props);
 
     this.state = this.props.server;
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -24,8 +26,9 @@ class EditServerForm extends React.Component {
   }
 
   handleDelete() {
-    this.props.deleteServer();
+    this.props.deleteServer(this.props.server.id);
     this.props.closeEditSetting();
+    return <Redirect to="/servers/@me" />
   }
 
   componentDidMount(){

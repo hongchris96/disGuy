@@ -4,6 +4,7 @@ import { clearErrors } from '../../actions/session/session_actions';
 import EditServerForm from './edit_server';
 
 const mapSTP = (state, ownProps) => ({
+  server: ownProps.server,
   errors: state.errors.server,
   formType: 'Update Server'
 });

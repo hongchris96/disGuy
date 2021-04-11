@@ -31,6 +31,7 @@ class Api::ServersController < ApplicationController
         render json: @server.errors.full_messages, status: 422
       end
     else
+      # puts "Server no no"
       render json: ['Must be Server Owner to make changes'], status: 401
     end
   end
