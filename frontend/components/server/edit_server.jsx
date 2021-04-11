@@ -5,11 +5,16 @@ class EditServerForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = this.props.server;
+    this.state = {
+      id: this.props.server.id,
+      host_id: this.props.server.host_id,
+      server_name: this.props.server.host_id
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    // this.updateEditState = this.updateEditState.bind(this);
   }
 
   handleSubmit() {
@@ -23,12 +28,13 @@ class EditServerForm extends React.Component {
 
   handleClose() {
     this.props.closeEditSetting();
+    this.setState({server_name: this.props.server.server_name});
   }
 
   handleDelete() {
     this.props.deleteServer(this.props.server.id);
     this.props.closeEditSetting();
-    return <Redirect to="/servers/@me" />
+    // return <Redirect to="/servers/@me" />
   }
 
   componentDidMount(){
@@ -36,7 +42,18 @@ class EditServerForm extends React.Component {
     this.props.requestServer(this.props.server.id);
   }
 
+  componentDidUpdate() {
+    if (this.state.id !== this.props.server.id) {
+      this.setState({
+        id: this.props.server.id,
+        host_id: this.props.server.host_id,
+        server_name: this.props.server.server_name
+      });
+    }
+  }
+
   render(){
+
     return(
 
       <div className="edit-server-info">

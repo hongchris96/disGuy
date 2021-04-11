@@ -37,8 +37,8 @@ class ServerShow extends React.Component {
     }
 
     return (
-      <div className="channel-sidebar">
-        <nav className="server-show" onClick={this.openServerSetting} >
+      <div className="channel-sidebar" >
+        <nav className="server-show" onClick={this.openServerSetting} onBlur={this.openServerSetting} >
           <h3>{this.props.server.server_name}</h3>
           <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
         </nav>
