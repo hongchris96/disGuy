@@ -17,6 +17,12 @@ class ServerShow extends React.Component {
     this.props.requestServer(this.props.match.params.serverId);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.server !== prevProps.server) {
+      this.setState(() => ({ dropdownVisible: false }));
+    }
+  }
+
   openServerSetting(e) {
     e.preventDefault();
     this.setState(prevState => ({ dropdownVisible: !prevState.dropdownVisible }));
@@ -37,8 +43,8 @@ class ServerShow extends React.Component {
     }
 
     return (
-      <div className="channel-sidebar" >
-        <nav className="server-show" onClick={this.openServerSetting} onBlur={this.openServerSetting} >
+      <div className="channel-sidebar">
+        <nav className="server-show" onClick={this.openServerSetting} >
           <h3>{this.props.server.server_name}</h3>
           <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
         </nav>

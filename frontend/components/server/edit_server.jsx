@@ -8,7 +8,7 @@ class EditServerForm extends React.Component {
     this.state = {
       id: this.props.server.id,
       host_id: this.props.server.host_id,
-      server_name: this.props.server.host_id
+      server_name: this.props.server.server_name
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
