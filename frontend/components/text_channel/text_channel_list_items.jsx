@@ -10,6 +10,7 @@ class TextChannelListItem extends React.Component {
     return (
       <li>
         {/* Link to textChannel */}
+        {this.props.textChannel.text_channel_name}
       </li>
     );
   }

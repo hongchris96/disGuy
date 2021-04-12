@@ -15,7 +15,9 @@ class TextChannelList extends React.Component {
   render(){
     return (
       <ul className="text-channel-list">
-        {/* text channel map */}
+        {this.props.textChannels.filter(tchannel => tchannel.server_id === this.props.serverId).map(tchannel => {
+          return <TextChannelListItem key={tchannel.id} textChannel={tchannel}/>
+        })}
       </ul>
     );
   }

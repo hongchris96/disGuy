@@ -1,5 +1,6 @@
 import React from 'react';
 import EditServerContainer from './edit_server_container';
+import TextChannelListContainer from '../text_channel/text_channel_list_container';
 
 class ServerShow extends React.Component {
   constructor(props) {
@@ -58,10 +59,11 @@ class ServerShow extends React.Component {
         {/* render ChannelIndex pass in props */}
         <div className="channel-list">
           <h3>Text Channels {`(inactive)`}<span>+</span></h3>
-          <ul>
+          <TextChannelListContainer serverId={this.props.server.id} />
+          {/* <ul>
             <li>#general {`(inactive)`}</li>
             <li>#introduction {`(inactive)`}</li>
-          </ul>
+          </ul> */}
         </div>
 
       </div>
