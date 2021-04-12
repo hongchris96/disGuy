@@ -44,10 +44,13 @@ class CreateTextChannelForm extends React.Component {
           </div>
           <div className="create-channel-type">
             <p>CHANNEL TYPE</p>
-            <input type="radio" name="#">
-              <h1>Text Channel</h1>
-              <p>Post images, GIFs, stickers, opinions, and puns</p>
-            </input>
+            <div className="channel-type-body">
+              <img src={window.radioURL}/>
+              <div>
+                <h1>Text Channel</h1>
+                <p>Post images, GIFs, stickers, opinions, and puns</p>
+              </div>
+            </div>
           </div>
           <label><p>CHANNEL NAME</p>
             <input type="text" value={this.state.text_channel_name} onChange={this.updateInput('text_channel_name')}/>
@@ -59,7 +62,6 @@ class CreateTextChannelForm extends React.Component {
         </form>
 
         <div className="blurred-background"></div>
-
       </div>
     );
   }

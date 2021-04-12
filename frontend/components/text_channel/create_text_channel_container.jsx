@@ -8,7 +8,7 @@ const mapSTP = (state, ownProps) => ({
   // allTextChannelIds: Object.keys(state.entities.textChannels), // for redirecting after create
   errors: state.errors.textChannel,
   textChannel: {
-    server_id: ownProps.match.params.serverId, 
+    // server_id: ownProps.match.params.serverId, 
     text_channel_name: ""
   }
 });
