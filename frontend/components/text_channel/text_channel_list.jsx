@@ -14,11 +14,14 @@ class TextChannelList extends React.Component {
 
   render(){
     return (
-      <ul className="text-channel-list">
-        {this.props.textChannels.filter(tchannel => tchannel.server_id === this.props.serverId).map(tchannel => {
-          return <TextChannelListItem key={tchannel.id} textChannel={tchannel}/>
-        })}
-      </ul>
+      <div className="channel-list">
+        <h3>Text Channels <span className="add-text-channel">+</span></h3>
+        <ul className="text-channel-list">
+          {this.props.textChannels.filter(tchannel => tchannel.server_id === this.props.serverId).map(tchannel => {
+            return <TextChannelListItem key={tchannel.id} textChannel={tchannel}/>
+          })}
+        </ul>
+      </div>
     );
   }
 }

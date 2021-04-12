@@ -57,8 +57,7 @@ class ServerShow extends React.Component {
         </div>
 
         {/* render ChannelIndex pass in props */}
-        <div className="channel-list">
-          <h3>Text Channels {`(inactive)`}<span>+</span></h3>
+        <div>
           <TextChannelListContainer serverId={this.props.server.id} />
           {/* <ul>
             <li>#general {`(inactive)`}</li>

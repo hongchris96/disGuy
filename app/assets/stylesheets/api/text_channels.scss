@@ -1,3 +1,59 @@
 // Place all the styles related to the Api::TextChannels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.channel-list {
+  padding-top: 10px;
+  color: rgb(142,146,151);
+}
+
+.channel-list > h3 {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.channel-list > h3 > span {
+  position: relative;
+  right: 2px;
+  font-family: "Whitney Light";
+  font-size: 25px;
+}
+
+.channel-list > h3:hover {
+  color: white;
+  transition: 0.3s;
+}
+
+.channel-list > ul > li {
+  height: 30px;
+  margin-bottom: 2px;
+  margin-left: 18px;
+  margin-right: 12px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.channel-list > ul > li:hover {
+  background-color: ivory;
+  color: black;
+  transition: 0.3s;
+}
+
+.channel-list-item > span {
+  font-size: 22px;
+  margin-right: 8px;
+  font-family: "Whitney Light";
+}
