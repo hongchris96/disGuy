@@ -19,9 +19,11 @@ class TextChannelShow extends React.Component {
       <div className="text-channel-show">
         <nav className="text-channel-top">
           <h1>{this.props.textChannel.text_channel_name}</h1>
-          <p>?</p>
-          <p>?</p>
-          <p>?</p>
+          <div>
+            <p>?</p>
+            <p>?</p>
+            <p>?</p>
+          </div>
         </nav>
         <div className="text-channel-body">
           <h1>CHAT ZONE</h1>

@@ -56,13 +56,8 @@ class ServerShow extends React.Component {
           <EditServerContainer server={this.props.server} showPageProps={this.props} closeEditSetting={this.openEditServer}/>
         </div>
 
-        {/* render ChannelIndex pass in props */}
         <div>
           <TextChannelListContainer serverId={this.props.server.id} />
-          {/* <ul>
-            <li>#general {`(inactive)`}</li>
-            <li>#introduction {`(inactive)`}</li>
-          </ul> */}
         </div>
 
       </div>

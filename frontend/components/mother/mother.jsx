@@ -12,11 +12,9 @@ const Mother = () => {
   return (
     <div className="mother">
       <ServerListContainer />
-      <Switch>
-        <Route exact path="/servers/@me" component={LandingZoneContainer} />
-        <Route path='/servers/:serverId' component={ServerShowContainer} />
-        <Route path='/servers/:serverId/:textChannelId' component={TextChannelShowContainer} />
-      </Switch>
+      <Route exact path="/servers/@me" component={LandingZoneContainer} />
+      <Route path='/servers/:serverId' component={ServerShowContainer} />
+      <Route path='/servers/:serverId/:textChannelId' component={TextChannelShowContainer} />
     </div>
   )
 }

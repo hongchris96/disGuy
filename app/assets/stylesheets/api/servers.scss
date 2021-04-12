@@ -4,9 +4,10 @@
 
 .mother {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: rgb(54,57,63);
   color: white;
@@ -16,6 +17,7 @@
 /* side bar with server list */
 
 .server-sidebar {
+  position: relative;
   width: 75px;
   display: flex;
   flex-direction: column;
@@ -95,12 +97,13 @@
   cursor: pointer;
 }
 
-/* mother-body */
+/* home page mother-body */
 
 .mother-body {
   display: flex;
   flex-direction: row;
-  width: 90%;
+  flex-wrap: wrap;
+  flex-grow: 1;
   height: 1fr;
   max-height: 1fr;
 }
@@ -124,6 +127,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: inherit;
 }
 
 nav.chat-box-top {
@@ -162,7 +166,8 @@ nav.chat-box-top > button:hover {
 
 // temporary
 .chat-box-content {
-  height: 300px;
+  height: inherit;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
