@@ -10,14 +10,14 @@ const ServersReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_SERVERS:
-      console.log("Receive all Servers action passed in");
+      // console.log("Receive all Servers action passed in");
       return action.servers;
     case RECEIVE_SERVER:
-      console.log("Receive Server action passed in");
+      // console.log("Receive Server action passed in");
       newState[action.server.id] = action.server;
       return newState;
     case REMOVE_SERVER:
-      console.log("Remove Server action passed in");
+      // console.log("Remove Server action passed in");
       delete newState[action.serverId];
       return newState;
     default:
