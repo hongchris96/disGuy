@@ -31,7 +31,6 @@ class EditServerForm extends React.Component {
   }
 
   handleDelete() {
-    // debugger
     this.props.deleteServer(this.props.server.id);
     this.props.closeEditSetting(); // might not need
     this.props.showPageProps.history.push('/servers/@me');
