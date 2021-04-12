@@ -13,8 +13,7 @@ class CreateTextChannelForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createTextChannel(this.state).then(() => this.props.closeModal());
-    this.setState({redirectToCreatedTextChannel: true})
-    // this.props.closeModal();
+    this.setState({redirectToCreatedTextChannel: true});
   }
 
   updateInput(field) {

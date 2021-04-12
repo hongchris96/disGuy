@@ -13,6 +13,7 @@ class TextChannelListItem extends React.Component {
           <span># </span>
           {this.props.textChannel.text_channel_name}
         </Link>
+        <span onClick={this.props.openEditSetting}>Gear</span>
       </li>
     );
   }
