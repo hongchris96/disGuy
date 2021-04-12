@@ -3,12 +3,12 @@ class Api::ServersController < ApplicationController
   before_action :require_logged_in!
 
   def index
-    @servers = Server.all
+    @servers = Server.all # NEED to be membered servers of current user
     render :index
   end
 
   def show
-    @server = Server.find_by(id: params[:id])
+    @server = Server.find_by(id: params[:id]) # NEED to be from @servers
     render :show
   end
 
