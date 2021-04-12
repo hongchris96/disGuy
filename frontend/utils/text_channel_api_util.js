@@ -16,7 +16,7 @@ export const createTextChannel = (textChannel) => {
   return $.ajax({
     method: "POST",
     url: `/api/text_channels`,
-    data: {textChannel: textChannel}
+    data: {text_channel: textChannel}
   });
 };
 
@@ -24,7 +24,7 @@ export const updateTextChannel = (textChannel) => {
   return $.ajax({
     method: "PATCH",
     url: `/api/text_channels/${textChannel.id}`,
-    data: {textChannel: textChannel}
+    data: {text_channel: textChannel}
   });
 };
 

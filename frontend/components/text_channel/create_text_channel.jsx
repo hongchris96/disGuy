@@ -12,7 +12,7 @@ class CreateTextChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTextChannel(this.state);
+    this.props.createTextChannel(this.state).then(() => this.props.closeModal());
     this.setState({redirectToCreatedTextChannel: true})
     // this.props.closeModal();
   }
@@ -26,13 +26,13 @@ class CreateTextChannelForm extends React.Component {
   }
 
   render(){
-
+    let channelLast = this.props.allTextChannelIds[this.props.allTextChannelIds.length - 1];
     let redirectToTextChannel = this.state.redirectToCreatedTextChannel;
-    // let serverLast = this.props.allServerIds[this.props.allServerIds.length - 1];
-    // let serverLoc = Number(serverLast);
-    // if (redirectToTextChannel) {
-    //   return <Redirect to={`/servers/${serverLoc}`} />
-    // }
+    let serverLoc = Number(this.props.location.pathname.split('/')[2]);
+    let channelLoc = Number(channelLast);
+    if (redirectToTextChannel) {
+      return <Redirect to={`/servers/${serverLoc}/${channelLoc}`} />
+    }
 
     return(
       <div>
