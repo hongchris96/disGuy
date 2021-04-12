@@ -1,0 +1,2 @@
+class TextChannelMessage < ApplicationRecord
+end
