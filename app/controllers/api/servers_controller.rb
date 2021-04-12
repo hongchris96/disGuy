@@ -13,7 +13,6 @@ class Api::ServersController < ApplicationController
   end
 
   def create
-    # debugger
     @server = Server.new(server_params)
     if @server.save
       render :show
