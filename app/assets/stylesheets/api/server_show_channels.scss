@@ -1,0 +1,109 @@
+.server-show {
+  position: relative;
+  height: 46px;
+  border-bottom: 2px solid rgb(35,37,39);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.server-show:hover {
+  background-color: rgb(52,55,60);
+  transition: 0.3s;
+}
+
+.server-show > * {
+  margin: 18px
+}
+
+.server-show > p {
+  color: rgb(180,180,188);
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.server-setting-dropdown {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 85px;
+  background-color: rgb(24,25,28);
+  color: rgb(185,187,190);
+  border-radius: 5px;
+  height: 100px;
+  width: 220px;
+  padding-top: 8px;
+}
+
+.server-setting-dropdown > * {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 0px;
+  margin-top: 3px;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.server-setting-dropdown > *:hover {
+  color: white;
+  background-color: rgb(120,140,220);
+  transition: 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+.channel-list {
+  padding-top: 10px;
+  color: rgb(142,146,151);
+}
+
+.channel-list > h3 {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.channel-list > h3 > span {
+  font-size: 18px;
+}
+
+.channel-list > h3:hover {
+  color: white;
+  transition: 0.3s;
+}
+
+.channel-list > ul > li {
+  padding: 8px;
+  margin-bottom: 5px;
+  margin-left: 16px;
+  margin-right: 12px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.channel-list > ul > li:hover {
+  background-color: ivory;
+  color: black;
+  transition: 0.3s;
+}

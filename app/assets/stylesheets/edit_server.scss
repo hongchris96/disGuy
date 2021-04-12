@@ -1,0 +1,183 @@
+
+// background
+.server-edit {
+  z-index: 200;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-image: linear-gradient(to right, rgb(47,49,54) 50%, rgb(54,57,63) 50%);
+}
+
+// content background
+.edit-server-info {
+  width: 1010px;
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 210px 1fr;
+}
+
+// sidebar
+.edit-server-sidebar {
+  background-color: rgb(47,49,54);
+  margin-top: 60px;
+}
+
+.edit-server-sidebar > * {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.edit-server-sidebar > h1 {
+  font-family: "Whitney Bold";
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 8px;
+  padding-left: 9px;
+  color: rgb(142,146,151);
+}
+
+.edit-server-sidebar > p {
+  padding: 10px;
+  margin-bottom: 3px;
+  color: rgb(185,187,190);
+  background-color: rgb(57,60,67);
+  border-radius: 5px;
+}
+
+.edit-server-sidebar > p:hover {
+  background-color: rgb(68, 71, 75);
+  transition: 0.5s;
+}
+
+.edit-server-sidebar > .delete-server {
+  padding: 10px;
+  margin-top: 3px;
+  background-color: rgb(47,49,54);
+  color: rgb(237,71,68);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-server-sidebar > .delete-server:hover {
+  background-color: rgb(66,51,55);
+  transition: 0.5s;
+}
+
+// right side
+.edit-server-body {
+  background-color: rgb(54,57,63);
+  position: relative;
+}
+
+.edit-server-body > form {
+  margin-top: 60px;
+  margin-left: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-server-heading { 
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: "Whitney Bold";
+  letter-spacing: 0.5px;
+  font-weight: 100;
+  margin-bottom: 25px;
+}
+
+.edit-server-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-input-place {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.edit-input-place > p {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: rgb(142,146,151);
+  font-family: "Whitney Bold";
+}
+
+.edit-input-place > input {
+  width: 350px;
+  height: 18px;
+  padding: 10px;
+  font-size: 14px;
+  font-family: "Whitney";
+  letter-spacing: 1px;
+  border: 1px solid rgb(34, 37, 41);
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-right: 25px;
+  background-color: rgb(48, 51, 57);
+  color: white;
+}
+
+.edit-input-place > input:focus {
+  border: 1px solid rgb(115, 138, 219);
+}
+
+.edit-input-place > input:hover:not(:focus) {
+  border: 1px solid black;
+  transition: 1s;
+}
+
+.edit-server-content > input[type="submit"] {
+  height: 36px;
+  width: 150px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Whitney";
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: rgb(83,181,130);
+  cursor: pointer;
+}
+
+.edit-server-content > input[type="submit"]:hover {
+  background-color: rgb(67, 153, 107);
+  transition: 0.5s;
+}
+
+.close-edit-server {
+  position: absolute;
+  color: white;
+  right: 22px;
+  top: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-edit-server-button {
+  font-size: 16px;
+  height: 34px;
+  width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid rgb(167,171,176);
+  border-radius: 19px;
+}
+
+.close-edit-server-button:hover {
+  background-color: rgb(72,76,82);
+}
+
+.close-edit-server > p:last-of-type {
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgb(167,171,176);
+}

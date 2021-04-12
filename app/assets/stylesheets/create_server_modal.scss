@@ -1,0 +1,149 @@
+.create-server-form {
+  background-color: white;
+  z-index: 120;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 440px;
+  height: 420px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Whitney";
+}
+
+.create-server-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px;
+  margin-bottom: 0px;
+}
+
+.create-server-heading > h1 {
+  margin-top: 5px;
+  font-size: 24px;
+  font-family: "Whitney Bold";
+  line-height: 30px;
+}
+
+.create-server-heading > p:first-of-type {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Whitney Light";
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  color: rgb(70,76,90);
+}
+
+.create-server-heading > p:nth-of-type(2) {
+  margin-top: 0px;
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Whitney Light";
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  color: rgb(70,76,90);
+}
+
+.upload-img {
+  margin-bottom: 20px;
+}
+
+.create-server-form > label {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.create-server-form > label > * {
+  margin: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.create-server-form > label > p {
+  color: rgb(106,116,128);
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.create-server-form > label > input {
+  width: 396px;
+  height: 34px;
+  border-radius: 4px;
+  font-family: "Whitney";
+  font-size: 15px;
+  border: 1px solid rgb(200,201,204);
+  background-color: rgb(252,252,252);
+  padding-left: 10px;
+}
+
+.undernote {
+  font-family: "Whitney Light";
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  color: rgb(70,76,90);
+  width: 406px;
+  margin: 5px;
+}
+
+.undernote > span {
+  font-family: "Whitney";
+  color: rgb(1,103,224);
+}
+
+.create-server-buttons {
+  background-color: rgb(246,246,247);
+  margin-top: 20px;
+  height: 70px;
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-server-buttons > * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.create-server-buttons > p {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.create-server-buttons > input[type="submit"] {
+  width: 95px;
+  height: 38px;
+  background-color: rgb(114,137,218);
+  border-radius: 4px;
+  color: white;
+  font-family: "Whitney";
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+}
+
+.create-server-buttons > input[type="submit"]:hover {
+  background-color: rgb(103,123,196);
+  transition: 0.3s;
+}
+
