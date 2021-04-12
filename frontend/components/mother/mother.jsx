@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import ServerListContainer from '../server/server_list_container';
 import LandingZoneContainer from './landing_zone_container';
 import ServerShowContainer from '../server/server_show_container';
+import TextChannelShowContainer from '../text_channel/text_channel_show_container';
 
 const Mother = () => {
   return (
@@ -14,6 +15,7 @@ const Mother = () => {
       <Switch>
         <Route exact path="/servers/@me" component={LandingZoneContainer} />
         <Route path='/servers/:serverId' component={ServerShowContainer} />
+        <Route path='/servers/:serverId/:textChannelId' component={TextChannelShowContainer} />
       </Switch>
     </div>
   )

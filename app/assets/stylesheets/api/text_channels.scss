@@ -7,6 +7,10 @@
   color: rgb(142,146,151);
 }
 
+.channel-list a {
+  color: rgb(142,146,151);
+}
+
 .channel-list > h3 {
   margin-left: 16px;
   margin-right: 16px;
@@ -52,8 +56,37 @@
   transition: 0.3s;
 }
 
-.channel-list-item > span {
+.channel-list-item > a {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.channel-list-item > a:hover {
+  color: black;
+  transition: 0.3s;
+}
+
+.channel-list-item > a > span {
   font-size: 22px;
   margin-right: 8px;
   font-family: "Whitney Light";
 }
+
+// .channel-list-item {
+//   border: 1px solid black;
+// }
+
+// .channel-list-item > * {
+//   border: 1px solid black;
+// }
+
+// .channel-list-item > * > * {
+//   border: 1px solid black;
+// }
+
+// .text-channel-show {
+//   position: absolute;
+//   z-index: 500;
+// }

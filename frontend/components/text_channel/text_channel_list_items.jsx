@@ -9,9 +9,10 @@ class TextChannelListItem extends React.Component {
   render(){
     return (
       <li className="channel-list-item">
-        {/* Link to textChannel */}
-        <span># </span>
-        {this.props.textChannel.text_channel_name}
+        <Link to={`/servers/${this.props.serverId}/${this.props.textChannel.id}`}>
+          <span># </span>
+          {this.props.textChannel.text_channel_name}
+        </Link>
       </li>
     );
   }

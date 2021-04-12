@@ -16,7 +16,8 @@ class EditServerForm extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.updateServer(this.state);
     this.props.closeEditSetting();
   }
