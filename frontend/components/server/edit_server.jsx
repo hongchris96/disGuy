@@ -35,12 +35,10 @@ class EditServerForm extends React.Component {
     this.props.deleteServer(this.props.server.id);
     this.props.closeEditSetting(); // might not need
     this.props.showPageProps.history.push('/servers/@me');
-    // console.log("Delete action done");
   }
 
   componentDidMount(){
     this.props.clearErrors();
-    console.log("Edit mounted");
     this.props.requestServer(this.props.server.id);
   }
 
