@@ -52,6 +52,14 @@
   font-size: 15px;
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
+}
+
+.server-setting-dropdown > * > img {
+  width: 10%;
+  height: auto;
+  position: absolute;
+  right: 7px;
 }
 
 .server-setting-dropdown > *:hover {

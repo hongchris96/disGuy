@@ -10,7 +10,7 @@ class TextChannelListItem extends React.Component {
 
     let shortenDisplay;
     if (this.props.textChannel.text_channel_name.length > 15) {
-      shortenDisplay = this.props.textChannel.text_channel_name.slice(0, 15).concat(" ", "...");
+      shortenDisplay = this.props.textChannel.text_channel_name.slice(0, 16).concat(" ", "...");
     } else {
       shortenDisplay = this.props.textChannel.text_channel_name;
     }
