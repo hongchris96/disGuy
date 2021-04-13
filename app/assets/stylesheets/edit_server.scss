@@ -107,6 +107,10 @@
   font-family: "Whitney Bold";
 }
 
+.edit-input-place > p.err-color {
+  color: red;
+}
+
 .edit-input-place > input {
   width: 350px;
   height: 18px;

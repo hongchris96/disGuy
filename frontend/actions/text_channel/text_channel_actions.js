@@ -41,7 +41,9 @@ export const createTextChannel = (textChannel) => dispatch => {
 };
 
 export const updateTextChannel = (textChannel) => dispatch => {
-  return TextChannelAPIUtil.updateTextChannel(textChannel).then(textChannel => dispatch(receiveTextChannel(textChannel)));
+  return TextChannelAPIUtil.updateTextChannel(textChannel)
+    .then(textChannel => (dispatch(receiveTextChannel(textChannel))),
+    err => (dispatch(receiveTextChannelErrors(err.responseJSON))));
 };
 
 export const deleteTextChannel = (textChannelId) => dispatch => {

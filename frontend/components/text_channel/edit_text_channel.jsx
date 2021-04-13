@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
+import classNames from 'classnames'
 
 class EditTextChannelForm extends React.Component {
   constructor(props){
@@ -19,7 +20,6 @@ class EditTextChannelForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateTextChannel(this.state);
-    this.props.closeEditSetting();
   }
 
   updateInput(field) {
@@ -44,7 +44,7 @@ class EditTextChannelForm extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.props.channel !== undefined && this.state.id !== this.props.channel.id) {
       this.props.requestTextChannel(this.props.channel.id);
       this.setState({
@@ -52,6 +52,27 @@ class EditTextChannelForm extends React.Component {
         server_id: this.props.channel.server_id,
         text_channel_name: this.props.channel.text_channel_name
       });
+    } else if (this.props.channel !== undefined && prevProps.channel !== undefined) {
+      if (this.props.errors.length === 0 && this.props.channel.text_channel_name !== prevProps.channel.text_channel_name) {
+        this.props.closeEditSetting();
+      }
+    }
+  }
+
+  renderLabelTitle() {
+    let errClass = classNames({
+      "err-color": true
+    });
+    let message = this.props.errors[0];
+    if (message === undefined) {
+      return (<p>CHANNEL NAME</p>);
+    } else {
+      return (
+        <p className={errClass}>
+          CHANNEL NAME
+          <span className="err-message"> - {message}</span>
+        </p>
+      );
     }
   }
 
@@ -82,7 +103,7 @@ class EditTextChannelForm extends React.Component {
             </div>
             <div className="edit-server-content">
               <label className="edit-input-place">
-                <p>CHANNEL NAME</p>
+                {this.renderLabelTitle()}
                 <input type="text" value={this.state.text_channel_name} onChange={this.updateInput('text_channel_name')}/>
               </label>
 
