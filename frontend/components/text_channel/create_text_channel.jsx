@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
+import classNames from 'classnames';
 
 class CreateTextChannelForm extends React.Component {
   constructor(props){
@@ -12,8 +13,7 @@ class CreateTextChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTextChannel(this.state).then(() => this.props.closeModal());
-    this.setState({redirectToCreatedTextChannel: true});
+    this.props.createTextChannel(this.state);
   }
 
   updateInput(field) {
@@ -22,6 +22,29 @@ class CreateTextChannelForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.errors.length === 0 && this.props.allTextChannelIds.length !== prevProps.allTextChannelIds.length) {
+      this.setState({redirectToCreatedTextChannel: true});
+    }
+  }
+
+  renderLabelTitle() {
+    let errClass = classNames({
+      "err-color": true
+    });
+    let message = this.props.errors[0];
+    if (message === undefined) {
+      return (<p>CHANNEL NAME</p>);
+    } else {
+      return (
+        <p className={errClass}>
+          CHANNEL NAME
+          <span className="err-message"> - {message}</span>
+        </p>
+      );
+    }
   }
 
   render(){
@@ -51,7 +74,7 @@ class CreateTextChannelForm extends React.Component {
               </div>
             </div>
           </div>
-          <label><p>CHANNEL NAME</p>
+          <label>{this.renderLabelTitle()}
             <input type="text" value={this.state.text_channel_name} onChange={this.updateInput('text_channel_name')}/>
           </label>
           <div className="create-text-channel-buttons">

@@ -9,6 +9,7 @@ const mapSTP = (state, ownProps) => {
   return ({
     allTextChannelIds: Object.keys(state.entities.textChannels),
     errors: state.errors.textChannel,
+    currentModal: state.ui.currentModal,
     textChannel: {
       server_id: ownProps.location.pathname.split("/")[2],
       text_channel_name: ""
