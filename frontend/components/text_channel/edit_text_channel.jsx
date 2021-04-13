@@ -6,9 +6,9 @@ class EditTextChannelForm extends React.Component {
     super(props);
 
     this.state = {
-      id: this.props.channel.id,
-      server_id: this.props.channel.server_id,
-      text_channel_name: this.props.channel.text_channel_name
+      id: "", // this.props.channel.id,
+      server_id: "", // this.props.channel.server_id,
+      text_channel_name: "" //this.props.channel.text_channel_name
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +28,7 @@ class EditTextChannelForm extends React.Component {
 
   handleClose() {
     this.props.closeEditSetting();
-    this.setState({text_channel_name: this.props.channel.text_channel_name});
+    // this.setState({text_channel_name: this.props.channel.text_channel_name});
   }
 
   handleDelete() {
@@ -39,18 +39,18 @@ class EditTextChannelForm extends React.Component {
 
   componentDidMount(){
     this.props.clearErrors();
-    this.props.requestTextChannel(this.props.channel.id);
+    this.props.requestTextChannel(6 /* this.props.channel.id*/);
   }
 
-  componentDidUpdate() {
-    if (this.state.id !== this.props.channel.id) {
-      this.setState({
-        id: this.props.channel.id,
-        server_id: this.props.channel.server_id,
-        text_channel_name: this.props.channel.text_channel_name
-      });
-    }
-  }
+  // componentDidUpdate() {
+  //   if (this.state.id !== this.props.channel.id) {
+  //     this.setState({
+  //       id: this.props.channel.id,
+  //       server_id: this.props.channel.server_id,
+  //       text_channel_name: this.props.channel.text_channel_name
+  //     });
+  //   }
+  // }
 
   render(){
 
@@ -58,7 +58,7 @@ class EditTextChannelForm extends React.Component {
 
       <div className="edit-server-info">
         <div className="edit-server-sidebar">
-          <h1>{this.props.channel.text_channel_name}</h1>
+          <h1>Shit{/* this.props.channel.text_channel_name */}</h1>
           <p>Overview</p>
           <p className="delete-server" onClick={this.handleDelete}>
             Delete Server
