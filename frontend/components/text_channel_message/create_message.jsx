@@ -28,7 +28,6 @@ class CreateTextChannelMessageForm extends React.Component {
     }
   }
 
-
   render(){
 
     return(

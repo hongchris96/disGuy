@@ -42,6 +42,7 @@ class TextChannelMessageList extends React.Component {
         key={message.id}
         message={message}
         currentUser={this.props.currentUser}
+        deleteMessage={this.props.deleteTextChannelMessage}
         // textChannel={tchannel} 
         // serverId={this.props.serverId}
         // openEditSetting={this.openEditSetting}

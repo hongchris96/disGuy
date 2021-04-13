@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestTextChannelMessages } from '../../actions/text_channel/text_channel_message_actions';
+import { requestTextChannelMessages, deleteTextChannelMessage } from '../../actions/text_channel/text_channel_message_actions';
 import TextChannelMessageList from './message_list';
 import { withRouter } from 'react-router-dom';
 
@@ -12,7 +12,8 @@ const mapSTP = (state, ownProps) => {
 };
 
 const mapDTP = dispatch => ({
-  requestTextChannelMessages: () => dispatch(requestTextChannelMessages())
+  requestTextChannelMessages: () => dispatch(requestTextChannelMessages()),
+  deleteTextChannelMessage: (messageId) => dispatch(deleteTextChannelMessage(messageId))
 });
 
 export default withRouter(connect(mapSTP, mapDTP)(TextChannelMessageList));

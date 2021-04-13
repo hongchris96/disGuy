@@ -20,6 +20,7 @@
 }
 
 .text-channel-message-list > li {
+  position: relative;
   margin-bottom: 2px;
   padding-right: 10px;
   display: flex;
@@ -42,13 +43,35 @@
   width: 80px;
 }
 
-// temporary messsage form
-.text-channel-body > p {
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  width: calc(100% - 40px);
+.message-settings {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.message-list-item > div.hidden {
+  display: none;
+}
+
+.message-settings > p {
+  width: 30px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid rgb(44,46,51);
+  background-color: rgb(61, 64, 70);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.message-settings > p:last-of-type:hover {
+  background-color: rgb(77, 0, 0);
+  transition: 0.3s;
 }
 
 .write-text-channel-chat {
