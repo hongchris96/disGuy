@@ -52,7 +52,6 @@ class TextChannelMessageListItem extends React.Component {
           <EditTextChannelMessageContainer 
             message={this.props.message} 
             closeEditMessage={this.openEditMessage}
-            // textChannelListProps={this.props}
           />
         </div>
         <div className={`message-settings ${this.state.messageSettingVis ? "" : "hidden"}`}>

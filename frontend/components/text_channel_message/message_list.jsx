@@ -7,29 +7,12 @@ import TextChannelMessageListItem from './message_list_item';
 class TextChannelMessageList extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   editVisible: false
-    // };
 
-    // this.openEditSetting = this.openEditSetting.bind(this);
   }
 
   componentDidMount(){
     this.props.requestTextChannelMessages();
   }
-
-  // componentDidUpdate() {
-  //   if (this.props.currentTextChannel !== undefined && this.props.currentTextChannel !== this.state.currentTextChannel) {
-  //     this.setState({currentTextChannel: this.props.currentTextChannel});
-  //   }
-  // }
-
-  // openEditSetting(e) {
-  //   // e.preventDefault();
-  //   this.setState(prevState => ({
-  //     editVisible: !prevState.editVisible 
-  //   }));
-  // }
 
   render(){
 
@@ -43,9 +26,6 @@ class TextChannelMessageList extends React.Component {
         message={message}
         currentUser={this.props.currentUser}
         deleteMessage={this.props.deleteTextChannelMessage}
-        // textChannel={tchannel} 
-        // serverId={this.props.serverId}
-        // openEditSetting={this.openEditSetting}
       />
     })}
     </ul>;
@@ -53,14 +33,6 @@ class TextChannelMessageList extends React.Component {
     return (
       <div className="messages-content">
         {messagesContent}
-        {/* <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
-          <EditTextChannelContainer 
-            serverId={this.props.serverId} 
-            channel={this.state.currentTextChannel} 
-            closeEditSetting={this.openEditSetting}
-            textChannelListProps={this.props}
-          />
-        </div> */}
       </div>
     );
   }

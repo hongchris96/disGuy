@@ -6,7 +6,6 @@ import CreateTextChannelMessageForm from './create_message';
 
 const mapSTP = (state, ownProps) => {
   return ({
-    // allTextChannelIds: Object.keys(state.entities.textChannels),
     errors: state.errors.textChannelMessage,
     textChannelMessage: {
       author_id: state.session.currentUser.id,
