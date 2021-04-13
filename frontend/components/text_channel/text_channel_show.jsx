@@ -27,9 +27,7 @@ class TextChannelShow extends React.Component {
           </div>
         </nav>
         <div className="text-channel-body">
-          <h1>CHAT ZONE</h1>
           <TextChannelMessageListContainer textChannelId={this.props.textChannel.id}/>
-          <p>_____________________________</p>
           <p>Create Message Form Goes Here</p>
         </div>
       </div>

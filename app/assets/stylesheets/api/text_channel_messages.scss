@@ -1,3 +1,53 @@
 // Place all the styles related to the Api::TextChannelMessages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.text-channel-body {
+  position: relative;
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  // border: 1px solid yellow;
+}
+
+.messages-content {
+  position: relative;
+  // border: 1px solid black;
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
+.text-channel-message-list > li {
+  margin-bottom: 2px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  // border: 1px solid pink;
+}
+
+.text-channel-message-list > li:hover {
+  background-color: rgb(50,53,59);
+}
+
+.text-channel-message-list > li > p {
+  line-height: 22px;
+}
+
+.text-channel-message-list > li > p:first-of-type {
+  margin-left: 12px;
+  width: 80px;
+}
+
+// temporary messsage form
+.text-channel-body > p {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: calc(100% - 40px);
+}
+
