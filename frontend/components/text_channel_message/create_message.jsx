@@ -11,6 +11,7 @@ class CreateTextChannelMessageForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createTextChannelMessage(this.state);
+    this.setState({chat_content: ''});
   }
 
   updateInput(field) {
@@ -19,6 +20,12 @@ class CreateTextChannelMessageForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
+  }
+
+  componentDidUpdate() {
+    if (this.props.location.pathname.split("/")[3] !== this.state.channel_id) {
+      this.setState({channel_id: this.props.location.pathname.split("/")[3]});
+    }
   }
 
 

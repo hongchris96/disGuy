@@ -36,8 +36,7 @@ class TextChannelMessageList extends React.Component {
     let messagesContent;
     let currentChannelMessageArray = this.props.textChannelMessages.filter(message => message.channel_id === this.props.textChannelId);
 
-    if (currentChannelMessageArray.length === 0) messagesContent = <h1 className="chat-placeholder">"CHAT ZONE"</h1>
-    else messagesContent = <ul className="text-channel-message-list">
+    messagesContent = <ul className="text-channel-message-list">
       {currentChannelMessageArray.map(message => {
       return <TextChannelMessageListItem 
         key={message.id}
