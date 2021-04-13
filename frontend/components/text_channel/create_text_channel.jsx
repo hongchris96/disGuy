@@ -27,6 +27,7 @@ class CreateTextChannelForm extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.errors.length === 0 && this.props.allTextChannelIds.length !== prevProps.allTextChannelIds.length) {
       this.setState({redirectToCreatedTextChannel: true});
+      this.props.closeModal();
     }
   }
 
