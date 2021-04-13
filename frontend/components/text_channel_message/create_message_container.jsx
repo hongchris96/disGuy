@@ -1,5 +1,7 @@
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { clearErrors } from '../../actions/session/session_actions';
+import { createTextChannelMessage } from '../../actions/text_channel/text_channel_message_actions';
 import CreateTextChannelMessageForm from './create_message';
 
 const mapSTP = (state, ownProps) => {

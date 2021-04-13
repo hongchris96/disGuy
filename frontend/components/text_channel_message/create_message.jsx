@@ -25,7 +25,8 @@ class CreateTextChannelMessageForm extends React.Component {
   render(){
 
     return(
-      <div>
+      <div className="write-text-channel-chat">
+        <p>{`\u279C`}</p>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.chat_content} onChange={this.updateInput("chat_content")}/>
         </form>
