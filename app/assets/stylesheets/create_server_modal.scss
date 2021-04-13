@@ -81,6 +81,10 @@
   font-size: 12px;
 }
 
+.create-server-form > label > p.err-color {
+  color: red;
+}
+
 .create-server-form > label > input {
   width: 396px;
   height: 34px;

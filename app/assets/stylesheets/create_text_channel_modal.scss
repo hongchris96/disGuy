@@ -1,0 +1,182 @@
+.create-text-channel-form {
+  background-color: rgb(54,57,63);
+  color: rgb(220,221,222);
+  z-index: 120;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 440px;
+  height: 520px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Whitney";
+}
+
+.create-text-channel-form > .close-modal:hover {
+  color: white;
+  transition: 0.5s;
+}
+
+.create-text-channel-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px;
+  margin-top: 30px;
+}
+
+.create-text-channel-heading > h1 {
+  margin-top: 5px;
+  font-size: 24px;
+  font-family: "Whitney Bold";
+  line-height: 30px;
+  color: white;
+}
+
+.create-text-channel-heading > p {
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Whitney Light";
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.create-channel-type {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.create-channel-type > p {
+  font-weight: 900;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.channel-type-body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 1px;
+  margin-right: 2px;
+  width: 408px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: rgb(32,34,37);
+  border: none;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.channel-type-body > img {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.channel-type-body > div > h1 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.channel-type-body > div > p {
+  font-size: 12px;
+}
+
+.create-text-channel-form > label {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 130px;
+}
+
+.create-text-channel-form > label > * {
+  margin: 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.create-text-channel-form > label > p {
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.create-text-channel-form > label > input {
+  width: 394px;
+  height: 34px;
+  border-radius: 4px;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-family: "Whitney";
+  font-size: 15px;
+  border: 1px solid rgb(34, 37, 41);
+  background-color: rgb(48, 51, 57);
+  color: white;
+  padding-left: 10px;
+}
+
+.create-text-channel-form > label > input:focus {
+  border: 1px solid rgb(115, 138, 219);
+}
+
+.create-text-channel-form > label > input:hover:not(:focus) {
+  border: 1px solid black;
+  transition: 1s;
+}
+
+.create-text-channel-buttons {
+  background-color: rgb(47,49,54);
+  margin-top: 20px;
+  height: 70px;
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.create-text-channel-buttons > * {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.create-text-channel-buttons > p {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.create-text-channel-buttons > p:hover {
+  text-decoration: underline;
+}
+
+.create-text-channel-buttons > input[type="submit"] {
+  width: 125px;
+  height: 38px;
+  background-color: rgb(114,137,218);
+  border-radius: 4px;
+  color: white;
+  font-family: "Whitney";
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+}
+
+.create-text-channel-buttons > input[type="submit"]:hover {
+  background-color: rgb(103,123,196);
+  transition: 0.3s;
+}
+

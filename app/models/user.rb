@@ -9,6 +9,17 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: :Server
 
+  has_many :server_member_joins,
+    foreign_key: :member_id,
+    class_name: :ServerMember
+
+  has_many :membered_servers,
+    through: :server_member_joins,
+    source: :servers
+
+  has_many :text_channel_messages,
+    foreign_key: :author_id,
+    class_name: :TextChannelMessage
 
   attr_reader :password
 

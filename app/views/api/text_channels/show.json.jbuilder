@@ -1,0 +1,1 @@
+json.partial! 'textchannel', text_channel: @text_channel

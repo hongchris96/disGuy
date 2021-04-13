@@ -9,6 +9,7 @@
 
 User.destroy_all
 Server.destroy_all
+TextChannel.destroy_all
 
 user1 = User.create(username: "Kujo Jotaro", email: "starplatinum@gmail.com", password: 'oraora')
 user2 = User.create(username: "Hanma Baki", email: "strongestbeing@gmail.com", password: 'yujiro')
@@ -16,3 +17,9 @@ user3 = User.create(username: "Jennifer Lawrence", email: "itadorisavior@gmail.c
 
 server1 = Server.create(server_name: "Stardust Crusaders", host_id: user1.id)
 server2 = Server.create(server_name: "Morioh Cho", host_id: user2.id)
+
+text_channel1 = TextChannel.create(server_id: server1.id, text_channel_name: "Hong Kong")
+text_channel2 = TextChannel.create(server_id: server1.id, text_channel_name: "Pakistan")
+text_channel3 = TextChannel.create(server_id: server1.id, text_channel_name: "Egypt")
+text_channel4 = TextChannel.create(server_id: server2.id, text_channel_name: "Trattoria Trussardi")
+text_channel5 = TextChannel.create(server_id: server2.id, text_channel_name: "Angelo Stone")

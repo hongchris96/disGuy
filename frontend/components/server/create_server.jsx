@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
+import classNames from 'classnames';
 
 class CreateServerForm extends React.Component {
   constructor(props){
@@ -13,8 +14,6 @@ class CreateServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createServer(this.state);
-    this.setState({redirectToCreatedServer: true})
-    // this.props.closeModal();
   }
 
   updateInput(field) {
@@ -23,6 +22,29 @@ class CreateServerForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.errors.length === 0 && this.props.allServerIds.length !== prevProps.allServerIds.length) {
+      this.setState({redirectToCreatedServer: true});
+    }
+  }
+
+  renderLabelTitle() {
+    let errClass = classNames({
+      "err-color": true
+    });
+    let message = this.props.errors[0];
+    if (message === undefined) {
+      return (<p>SERVER NAME</p>);
+    } else {
+      return (
+        <p className={errClass}>
+          SERVER NAME
+          <span className="err-message"> - {message}</span>
+        </p>
+      );
+    }
   }
 
   render(){
@@ -44,7 +66,7 @@ class CreateServerForm extends React.Component {
             <p>You can always change it later.</p>
           </div>
           <img className="upload-img" src={window.noUploadURL}/>
-          <label><p>SERVER NAME</p>
+          <label>{this.renderLabelTitle()}
             <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
           </label>
           <p className="undernote">By creating a server, you agree to disGuy's <span>Community Guidelines</span>.</p>
