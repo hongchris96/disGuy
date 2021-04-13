@@ -41,7 +41,9 @@ export const createServer = (server) => dispatch => {
 };
 
 export const updateServer = (server) => dispatch => {
-  return ServerAPIUtil.updateServer(server).then(server => dispatch(receiveServer(server)));
+  return ServerAPIUtil.updateServer(server)
+    .then(server => (dispatch(receiveServer(server))),
+    err => (dispatch(receiveServerErrors(err.responseJSON))));
 };
 
 export const deleteServer = (serverId) => dispatch => {

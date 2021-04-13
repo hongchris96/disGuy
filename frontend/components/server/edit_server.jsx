@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
+import classNames from 'classnames';
 
 class EditServerForm extends React.Component {
   constructor(props){
@@ -19,7 +20,7 @@ class EditServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateServer(this.state);
-    this.props.closeEditSetting();
+    // this.props.closeEditSetting();
   }
 
   updateInput(field) {
@@ -42,13 +43,34 @@ class EditServerForm extends React.Component {
     this.props.requestServer(this.props.server.id);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (this.state.id !== this.props.server.id) {
       this.setState({
         id: this.props.server.id,
         host_id: this.props.server.host_id,
         server_name: this.props.server.server_name
       });
+    } else if (this.props.server !== undefined && prevProps !== undefined) {
+      if (this.props.errors.length === 0 && this.props.server.server_name !== prevProps.server.server_name) {
+        this.props.closeEditSetting();
+      }
+    }
+  }
+
+  renderLabelTitle() {
+    let errClass = classNames({
+      "err-color": true
+    });
+    let message = this.props.errors[0];
+    if (message === undefined) {
+      return (<p>SERVER NAME</p>);
+    } else {
+      return (
+        <p className={errClass}>
+          SERVER NAME
+          <span className="err-message"> - {message}</span>
+        </p>
+      );
     }
   }
 
@@ -75,7 +97,7 @@ class EditServerForm extends React.Component {
             </div>
             <div className="edit-server-content">
               <label className="edit-input-place">
-                <p>SERVER NAME</p>
+                {this.renderLabelTitle()}
                 <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
               </label>
 
