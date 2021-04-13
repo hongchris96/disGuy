@@ -31,6 +31,7 @@ class ServerShow extends React.Component {
 
   openEditServer(e) {
     // e.preventDefault();
+    this.props.clearErrors();
     this.setState(prevState => ({
       dropdownVisible: false, 
       editVisible: !prevState.editVisible 

@@ -28,6 +28,7 @@ class EditTextChannelForm extends React.Component {
 
   handleClose() {
     this.props.closeEditSetting();
+    this.props.clearErrors();
     this.setState({text_channel_name: this.props.channel.text_channel_name});
   }
 
