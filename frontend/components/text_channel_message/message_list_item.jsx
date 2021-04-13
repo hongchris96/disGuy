@@ -37,8 +37,10 @@ class TextChannelMessageListItem extends React.Component {
 
   render(){
     let author;
+    let nameParts;
     if (this.props.message.author_id === this.props.currentUser.id) {
-      author = this.props.currentUser.username.split(" ")[1].slice(0, 7).concat(" ", ":");
+      nameParts = this.props.currentUser.username.split(" ");
+      author = nameParts[nameParts.length-1].slice(0, 7).concat(" ", ":");
     } else {
       author = "User".concat(" ", this.props.message.author_id, " ", ":");
     }
