@@ -7,13 +7,21 @@ class TextChannelListItem extends React.Component {
   }
 
   render(){
+
+    let shortenDisplay;
+    if (this.props.textChannel.text_channel_name.length > 15) {
+      shortenDisplay = this.props.textChannel.text_channel_name.slice(0, 15).concat(" ", "...");
+    } else {
+      shortenDisplay = this.props.textChannel.text_channel_name;
+    }
+
     return (
       <li className="channel-list-item">
         <Link to={`/servers/${this.props.serverId}/${this.props.textChannel.id}`}>
           <span># </span>
-          {this.props.textChannel.text_channel_name}
+          {shortenDisplay}
+          <img src={window.cogURL} onClick={this.props.openEditSetting}/>
         </Link>
-        <img src={window.cogURL} onClick={this.props.openEditSetting}/>
       </li>
     );
   }

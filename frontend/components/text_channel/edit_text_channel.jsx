@@ -28,40 +28,47 @@ class EditTextChannelForm extends React.Component {
 
   handleClose() {
     this.props.closeEditSetting();
-    // this.setState({text_channel_name: this.props.channel.text_channel_name});
+    this.setState({text_channel_name: this.props.channel.text_channel_name});
   }
 
   handleDelete() {
     this.props.deleteTextChannel(this.props.channel.id);
     this.props.closeEditSetting(); // might not need
-    this.props.textChannelListProps.history.push('/servers/@me');
+    this.props.textChannelListProps.history.push(`/servers/${this.props.serverId}`);
   }
 
   componentDidMount(){
     this.props.clearErrors();
-    this.props.requestTextChannel(6 /* this.props.channel.id*/);
+    if (this.props.channel !== undefined) {
+      this.props.requestTextChannel(this.props.channel.id);
+    }
   }
 
-  // componentDidUpdate() {
-  //   if (this.state.id !== this.props.channel.id) {
-  //     this.setState({
-  //       id: this.props.channel.id,
-  //       server_id: this.props.channel.server_id,
-  //       text_channel_name: this.props.channel.text_channel_name
-  //     });
-  //   }
-  // }
+  componentDidUpdate() {
+    if (this.props.channel !== undefined && this.state.id !== this.props.channel.id) {
+      this.props.requestTextChannel(this.props.channel.id);
+      this.setState({
+        id: this.props.channel.id,
+        server_id: this.props.channel.server_id,
+        text_channel_name: this.props.channel.text_channel_name
+      });
+    }
+  }
 
   render(){
+
+    if (this.props.channel === undefined) {
+      return null;
+    }
 
     return(
 
       <div className="edit-server-info">
         <div className="edit-server-sidebar">
-          <h1>Shit{/* this.props.channel.text_channel_name */}</h1>
+          <h1># {this.props.channel.text_channel_name}</h1>
           <p>Overview</p>
           <p className="delete-server" onClick={this.handleDelete}>
-            Delete Server
+            Delete Channel
           </p>
         </div>
         <div className="edit-server-body">

@@ -18,6 +18,12 @@ class TextChannelList extends React.Component {
     this.props.requestTextChannels();
   }
 
+  componentDidUpdate() {
+    if (this.props.currentTextChannel !== undefined && this.props.currentTextChannel !== this.state.currentTextChannel) {
+      this.setState({currentTextChannel: this.props.currentTextChannel});
+    }
+  }
+
   openEditSetting(e) {
     // e.preventDefault();
     this.setState(prevState => ({
@@ -41,7 +47,8 @@ class TextChannelList extends React.Component {
         </ul>
         <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
           <EditTextChannelContainer 
-            channel={this.props.currentTextChannel} 
+            serverId={this.props.serverId} 
+            channel={this.state.currentTextChannel} 
             closeEditSetting={this.openEditSetting}
             textChannelListProps={this.props}
           />

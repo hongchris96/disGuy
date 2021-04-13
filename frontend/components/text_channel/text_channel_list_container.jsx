@@ -6,8 +6,8 @@ import { withRouter } from 'react-router-dom';
 
 const mapSTP = (state, ownProps) => {
   return {
-    textChannels: Object.values(state.entities.textChannels)
-    // currentTextChannel: state.entities.textChannels[ownProps.location.pathname.split("/")[3]]
+    textChannels: Object.values(state.entities.textChannels),
+    currentTextChannel: state.entities.textChannels[ownProps.location.pathname.split("/")[3]]
   }
 };
 
