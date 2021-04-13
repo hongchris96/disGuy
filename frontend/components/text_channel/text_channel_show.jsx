@@ -1,4 +1,5 @@
 import React from 'react';
+import TextChannelMessageListContainer from '../text_channel_message/message_list_container';
 
 class TextChannelShow extends React.Component {
   constructor(props) {
@@ -27,6 +28,9 @@ class TextChannelShow extends React.Component {
         </nav>
         <div className="text-channel-body">
           <h1>CHAT ZONE</h1>
+          <TextChannelMessageListContainer textChannelId={this.props.textChannel.id}/>
+          <p>_____________________________</p>
+          <p>Create Message Form Goes Here</p>
         </div>
       </div>
     );
