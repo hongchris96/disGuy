@@ -74,6 +74,11 @@
   transition: 0.3s;
 }
 
+.edit-message {
+  position: absolute;
+  z-index: 100;
+}
+
 .write-text-channel-chat {
   border: none;
   border-radius: 7px;

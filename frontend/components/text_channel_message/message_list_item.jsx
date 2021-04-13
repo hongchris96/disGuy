@@ -1,12 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import EditTextChannelMessageContainer from './edit_message_container';
 
 class TextChannelMessageListItem extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      messageSettingVis: false
+      messageSettingVis: false,
+      editMessageVis: false
     };
+
+    this.openEditMessage = this.openEditMessage.bind(this);
+
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
   }
@@ -19,6 +24,15 @@ class TextChannelMessageListItem extends React.Component {
   handleMouseLeave(e) {
     e.preventDefault();
     this.setState({ messageSettingVis: false });
+  }
+
+  openEditMessage(e) {
+    // e.preventDefault();
+    if (this.props.message.author_id === this.props.currentUser.id) {
+      this.setState(prevState => ({
+        editMessageVis: !prevState.editMessageVis 
+      }));
+    }
   }
 
   render(){
@@ -34,8 +48,15 @@ class TextChannelMessageListItem extends React.Component {
         {/* maybe author name but then needs user index in controller */}
         <p>{author}</p>
         <p>{this.props.message.chat_content}</p>
+        <div className={`edit-message ${this.state.editMessageVis ? "" : "hidden"}`}>
+          <EditTextChannelMessageContainer 
+            message={this.props.message} 
+            closeEditMessage={this.openEditMessage}
+            // textChannelListProps={this.props}
+          />
+        </div>
         <div className={`message-settings ${this.state.messageSettingVis ? "" : "hidden"}`}>
-          <p><img src={window.editURL}/></p>
+          <p onClick={this.openEditMessage}><img src={window.editURL}/></p>
           <p onClick={() => this.props.deleteMessage(this.props.message.id)}><img src={window.trashURL}/></p>
         </div>
       </li>
