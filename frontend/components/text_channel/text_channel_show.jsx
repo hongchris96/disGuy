@@ -30,6 +30,8 @@ class TextChannelShow extends React.Component {
             case "no_message":
               this.props.removeTextChannelMessage(data.message.id);
               break;
+            case "inaction":
+              break;
           }
         },
         // Third Arg: Speak, sends data to backend, invoke speak method (ChatChannel Class)
@@ -42,16 +44,8 @@ class TextChannelShow extends React.Component {
         poof: function(data) {
           return this.perform("poof", data);
         }
-        // load: function() {return this.perform("load")}
       }
     );
-  }
-
-  // Action Cable Stuff
-  componentDidUpdate() {
-    if (this.bottom.current !== null) {
-      this.bottom.current.scrollIntoView();
-    }
   }
 
   render(){
