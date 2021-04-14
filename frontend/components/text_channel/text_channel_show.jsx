@@ -27,22 +27,26 @@ class TextChannelShow extends React.Component {
             case "message":
               this.props.receiveTextChannelMessage(data.message);
               break;
+            case "no_message":
+              this.props.removeTextChannelMessage(data.message.id);
+              break;
           }
         },
         // Third Arg: Speak, sends data to backend, invoke speak method (ChatChannel Class)
         speak: function(data) {
           return this.perform("speak", data);
         },
+        update: function(data) {
+          return this.perform("update", data);
+        },
+        poof: function(data) {
+          return this.perform("poof", data);
+        }
         // load: function() {return this.perform("load")}
       }
     );
   }
 
-  // Action Cable Stuff
-  loadChat(e) {
-    e.preventDefault();
-    App.cable.subscriptions.subscriptions[0].load();
-  }
   // Action Cable Stuff
   componentDidUpdate() {
     if (this.bottom.current !== null) {
@@ -66,7 +70,6 @@ class TextChannelShow extends React.Component {
             <p>?</p>
           </div>
         </nav>
-
 
         <div className="text-channel-body">
           <TextChannelMessageListContainer textChannelId={this.props.textChannel.id}/>
