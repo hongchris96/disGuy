@@ -3,10 +3,12 @@ import { requestDMChannels, deleteDMChannel } from '../../actions/dm/dm_channel_
 import { openModal } from '../../actions/modal/modal_actions';
 import DMChannelList from './dmlist';
 import { withRouter } from 'react-router-dom';
+import { requestUsers } from '../../actions/user/user_actions';
 
 const mapSTP = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
+    allUsers: Object.values(state.entities.users),
     dmChannels: Object.values(state.entities.dmChannels),
     currentDMChannel: state.entities.dmChannels[ownProps.location.pathname.split("/")[2]]
   }

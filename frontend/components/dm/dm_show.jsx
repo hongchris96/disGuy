@@ -57,9 +57,9 @@ class DMChannelShow extends React.Component {
     let shortenDisplay;
 
     if (this.props.dmChannel.user1_id === this.props.currentUser.id) {
-      shortenDisplay = 'User'.concat(" ",this.props.dmChannel.user2_id)
+      shortenDisplay = this.props.allUsers.filter(user => user.id === this.props.dmChannel.user2_id)[0].username
     } else {
-      shortenDisplay = 'User'.concat(" ",this.props.dmChannel.user1_id)
+      shortenDisplay = this.props.allUsers.filter(user => user.id === this.props.dmChannel.user1_id)[0].username
     }
 
     return(

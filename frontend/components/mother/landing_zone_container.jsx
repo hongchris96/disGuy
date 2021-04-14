@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session/session_actions';
+import { requestUsers } from '../../actions/user/user_actions';
 import LandingZone from './landing_zone';
 
 const mapSTP = state => ({
@@ -8,6 +9,7 @@ const mapSTP = state => ({
 });
 
 const mapDTP = dispatch => ({
+  requestUsers: () => dispatch(requestUsers()),
   logout: () => dispatch(logout())
 });
 

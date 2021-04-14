@@ -14,6 +14,11 @@ class LandingZone extends React.Component {
     this.openHomeSetting = this.openHomeSetting.bind(this);
   }
 
+  // Questionable
+  componentWillMount() {
+    this.props.requestUsers();
+  }
+
   openHomeSetting(e) {
     e.preventDefault();
     this.setState(prevState => ({ dropdownVisible: !prevState.dropdownVisible }));

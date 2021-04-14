@@ -6,6 +6,7 @@ import DMChannelShow from './dm_show';
 const mapSTP = (state, ownProps) => {
   return ({
     currentUser: state.session.currentUser,
+    allUsers: Object.values(state.entities.users),
     dmChannel: state.entities.dmChannels[ownProps.match.params.dmChannelId]
   })
 };
