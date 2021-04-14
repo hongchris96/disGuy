@@ -12,7 +12,8 @@ const Mother = () => {
   return (
     <div className="mother">
       <ServerListContainer />
-      <Route exact path="/servers/@me" component={LandingZoneContainer} />
+      <Route path="/servers/@me" component={LandingZoneContainer} />
+      {/* <Route exact="/servers/@me" component={LandingZoneContainer} /> */}
       <Route path='/servers/:serverId' component={ServerShowContainer} />
       <Route path='/servers/:serverId/:textChannelId' component={TextChannelShowContainer} />
     </div>
