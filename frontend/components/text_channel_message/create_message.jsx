@@ -10,7 +10,8 @@ class CreateTextChannelMessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTextChannelMessage(this.state);
+    // this.props.createTextChannelMessage(this.state);
+    App.cable.subscriptions.subscriptions[0].speak({ message: this.state });
     this.setState({chat_content: ''});
   }
 
@@ -34,7 +35,12 @@ class CreateTextChannelMessageForm extends React.Component {
       <div className="write-text-channel-chat">
         <p>{`\u279C`}</p>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.chat_content} onChange={this.updateInput("chat_content")}/>
+          <input 
+            type="text" 
+            value={this.state.chat_content} 
+            onChange={this.updateInput("chat_content")} 
+            placeholder="Type message here"
+          />
         </form>
       </div>
     );

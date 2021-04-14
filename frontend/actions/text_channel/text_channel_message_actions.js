@@ -11,7 +11,7 @@ const receiveTextChannelMessages = textChannelMessages => ({
   textChannelMessages
 });
 
-const receiveTextChannelMessage = textChannelMessage => ({
+export const receiveTextChannelMessage = textChannelMessage => ({
   type: RECEIVE_TEXTCHANNEL_MESSAGE,
   textChannelMessage
 });
