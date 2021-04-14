@@ -21,17 +21,15 @@ class LandingZone extends React.Component {
 
   render() {
     return (
-      <div className="mother-body">
-        <div className="channel-sidebar">
-          <nav className="server-show" onClick={this.openHomeSetting} >
-            <h3>{this.props.currentUser.username}</h3>
-            <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
-          </nav>
-          <div className={`server-setting-dropdown ${this.state.dropdownVisible ? "" : "hidden"}`}>
-            <button className="logout" onClick={this.props.logout}>Logout</button>
-          </div>
-          <DMListContainer />
+      <div className="channel-sidebar">
+        <nav className="server-show" onClick={this.openHomeSetting} >
+          <h3>{this.props.currentUser.username}</h3>
+          <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
+        </nav>
+        <div className={`server-setting-dropdown ${this.state.dropdownVisible ? "" : "hidden"}`}>
+          <button className="logout" onClick={this.props.logout}>Logout</button>
         </div>
+        <DMListContainer />
       </div>
     )
 
