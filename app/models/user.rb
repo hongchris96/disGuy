@@ -21,6 +21,18 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :TextChannelMessage
 
+  has_many :direct_message_channels,
+    foreign_key: :user1_id,
+    class_name: :DirectMessageChannel
+
+  has_many :direct_message_channels2,
+    foreign_key: :user2_id,
+    class_name: :DirectMessageChannel
+
+  has_many :direct_messages,
+    foreign_key: :author_id,
+    class_name: :DirectMessage
+
   attr_reader :password
 
   def self.find_by_credentials(email, peeword)
