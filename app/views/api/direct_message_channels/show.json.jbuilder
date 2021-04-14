@@ -1,0 +1,1 @@
+json.partial! 'directchannel', direct_message_channel: @direct_message_channel
