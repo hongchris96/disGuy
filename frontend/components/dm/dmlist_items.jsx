@@ -22,10 +22,10 @@ class DMListItem extends React.Component {
     // }
 
     return (
-      <li className="channel-list-item">
+      <li className="dm-channel-list-item">
         <Link to={`/servers/@me/${this.props.dmChannel.id}`}>
           {shortenDisplay}
-          <p className="close-modal" onClick={() => this.props.deleteDMChannel(this.props.dmChannel.id)}>{`\u2715`}</p>
+          <span className="close-modal" onClick={() => this.props.deleteDMChannel(this.props.dmChannel.id)}>{`\u2715`}</span>
         </Link>
       </li>
     );

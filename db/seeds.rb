@@ -11,6 +11,7 @@ User.destroy_all
 Server.destroy_all
 TextChannel.destroy_all
 TextChannelMessage.destroy_all
+DirectMessageChannel.destroy_all
 
 user1 = User.create(username: "Kujo Jotaro", email: "starplatinum@gmail.com", password: 'oraora')
 user2 = User.create(username: "Hanma Baki", email: "strongestbeing@gmail.com", password: 'yujiro')
@@ -41,3 +42,7 @@ text_channel_messages7 = TextChannelMessage.create(author_id: user1.id, channel_
 text_channel_messages8 = TextChannelMessage.create(author_id: user2.id, channel_id: text_channel5.id, chat_content: "Yo Angelo!")
 text_channel_messages9 = TextChannelMessage.create(author_id: user3.id, channel_id: text_channel5.id, chat_content: "Yo Angelo!")
 
+
+dm_channel1 = DirectMessageChannel.create(user1_id: user1.id, user2_id: user2.id)
+dm_channel2 = DirectMessageChannel.create(user1_id: user1.id, user2_id: user3.id)
+dm_channel3 = DirectMessageChannel.create(user1_id: user2.id, user2_id: user3.id)
