@@ -14,6 +14,7 @@ class TextChannelMessageListItem extends React.Component {
 
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleMouseEnter(e) {
@@ -24,6 +25,12 @@ class TextChannelMessageListItem extends React.Component {
   handleMouseLeave(e) {
     e.preventDefault();
     this.setState({ messageSettingVis: false });
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    // this.props.deleteMessage(this.props.message.id);
+    App.cable.subscriptions.subscriptions[0].poof({ message: this.props.message,  currentUser: currentUser});
   }
 
   openEditMessage(e) {
@@ -58,7 +65,7 @@ class TextChannelMessageListItem extends React.Component {
         </div>
         <div className={`message-settings ${this.state.messageSettingVis ? "" : "hidden"}`}>
           <p onClick={this.openEditMessage}><img src={window.editURL}/></p>
-          <p onClick={() => this.props.deleteMessage(this.props.message.id)}><img src={window.trashURL}/></p>
+          <p onClick={this.handleDelete}><img src={window.trashURL}/></p>
         </div>
       </li>
     );

@@ -11,12 +11,12 @@ const receiveTextChannelMessages = textChannelMessages => ({
   textChannelMessages
 });
 
-const receiveTextChannelMessage = textChannelMessage => ({
+export const receiveTextChannelMessage = textChannelMessage => ({
   type: RECEIVE_TEXTCHANNEL_MESSAGE,
   textChannelMessage
 });
 
-const removeTextChannelMessage = textChannelMessageId => ({
+export const removeTextChannelMessage = textChannelMessageId => ({
   type: REMOVE_TEXTCHANNEL_MESSAGE,
   textChannelMessageId
 });
