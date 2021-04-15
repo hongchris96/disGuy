@@ -3,6 +3,7 @@ import { clearErrors } from '../../actions/session/session_actions';
 import { closeModal } from '../../actions/modal/modal_actions';
 import { withRouter } from 'react-router-dom';
 import { createDMChannel } from '../../actions/dm/dm_channel_actions';
+import { requestUsers } from '../../actions/user/user_actions';
 import CreateDMChannelForm from './create_dm_channel';
 
 const mapSTP = (state, ownProps) => {
@@ -21,7 +22,8 @@ const mapSTP = (state, ownProps) => {
 const mapDTP = dispatch => ({
   createDMChannel: (dmChannel) => dispatch(createDMChannel(dmChannel)),
   closeModal: () => dispatch(closeModal()),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  requestUsers: () => dispatch(requestUsers())
 });
 
 export default withRouter(connect(mapSTP, mapDTP)(CreateDMChannelForm));

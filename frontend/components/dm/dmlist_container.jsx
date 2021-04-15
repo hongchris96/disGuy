@@ -10,14 +10,15 @@ const mapSTP = (state, ownProps) => {
     currentUser: state.session.currentUser,
     allUsers: Object.values(state.entities.users),
     dmChannels: Object.values(state.entities.dmChannels),
-    currentDMChannel: state.entities.dmChannels[ownProps.location.pathname.split("/")[2]]
+    currentDMChannel: state.entities.dmChannels[ownProps.location.pathname.split("/")[3]]
   }
 };
 
 const mapDTP = dispatch => ({
   requestDMChannels: () => dispatch(requestDMChannels()),
   deleteDMChannel: (dmChannelId) => dispatch(deleteDMChannel(dmChannelId)),
-  openModal: (componentName) => dispatch(openModal(componentName))
+  openModal: (componentName) => dispatch(openModal(componentName)),
+  requestUsers: () => dispatch(requestUsers())
 });
 
 export default withRouter(connect(mapSTP, mapDTP)(DMChannelList));

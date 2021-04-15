@@ -13,6 +13,7 @@ class DMChannelList extends React.Component {
   }
 
   render(){
+
     return (
       <div className="channel-list">
         <h3 className="dmlist-title">Direct Messages <span onClick={() => this.props.openModal("CreateDMChannel")} className="add-text-channel">+</span></h3>

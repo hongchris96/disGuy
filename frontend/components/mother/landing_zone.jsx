@@ -25,6 +25,11 @@ class LandingZone extends React.Component {
   }
 
   render() {
+    
+    if (this.props.currentUser === undefined) {
+      return null;
+    }
+
     return (
       <div className="channel-sidebar">
         <nav className="server-show" onClick={this.openHomeSetting} >

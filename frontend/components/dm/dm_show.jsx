@@ -1,6 +1,6 @@
 import React from 'react';
-// import DMMessageListContainer from '../text_channel_message/message_list_container';
-// import CreateDirectMessageContainer from '../text_channel_message/create_message_container';
+import DMMessageListContainer from '../dm_messages/message_list_container';
+import CreateDirectMessageContainer from '../dm_messages/create_message_container';
 
 class DMChannelShow extends React.Component {
   constructor(props) {
@@ -74,10 +74,8 @@ class DMChannelShow extends React.Component {
         </nav>
 
         <div className="text-channel-body">
-          {/* <DMMessageListContainer dmChannelId={this.props.dmChannel.id}/> */}
-          <p>All messages here</p>
-          {/* <CreateDirectMessageContainer /> */}
-          <p>Type your message here</p>
+          <DMMessageListContainer dmChannelId={this.props.dmChannel.id}/>
+          <CreateDirectMessageContainer />
         </div>
       </div>
     );
