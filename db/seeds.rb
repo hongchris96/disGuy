@@ -12,10 +12,19 @@ Server.destroy_all
 TextChannel.destroy_all
 TextChannelMessage.destroy_all
 DirectMessageChannel.destroy_all
+DirectMessage.destroy_all
 
 user1 = User.create(username: "Kujo Jotaro", email: "starplatinum@gmail.com", password: 'oraora')
 user2 = User.create(username: "Hanma Baki", email: "strongestbeing@gmail.com", password: 'yujiro')
 user3 = User.create(username: "Jennifer Lawrence", email: "itadorisavior@gmail.com", password: 'actress')
+user4 = User.create(username: "Samuel L Jackson", email: "nickfury@gmail.com", password: 'shield')
+user5 = User.create(username: "Dio Brando", email: "zawarudo@gmail.com", password: 'mudamuda')
+user6 = User.create(username: "Giorno Giovanna", email: "goldexp@gmail.com", password: 'mudamuda')
+user7 = User.create(username: "Higashikata Josuke", email: "crazydiamond@gmail.com", password: 'dorara')
+user8 = User.create(username: "Hanma Yujiro", email: "beast@gmail.com", password: 'muscle')
+user9 = User.create(username: "Eren Jaegar", email: "attack@gmail.com", password: 'reiner')
+user10 = User.create(username: "Zeke Jaegar", email: "monke@gmail.com", password: 'baseball')
+
 
 server1 = Server.create(server_name: "Stardust Crusaders", host_id: user1.id)
 server2 = Server.create(server_name: "Morioh Cho", host_id: user2.id)
@@ -45,4 +54,23 @@ text_channel_messages9 = TextChannelMessage.create(author_id: user3.id, channel_
 
 dm_channel1 = DirectMessageChannel.create(user1_id: user1.id, user2_id: user2.id)
 dm_channel2 = DirectMessageChannel.create(user1_id: user1.id, user2_id: user3.id)
-dm_channel3 = DirectMessageChannel.create(user1_id: user2.id, user2_id: user3.id)
+dm_channel3 = DirectMessageChannel.create(user1_id: user1.id, user2_id: user5.id)
+dm_channel4 = DirectMessageChannel.create(user1_id: user6.id, user2_id: user5.id)
+dm_channel5 = DirectMessageChannel.create(user1_id: user3.id, user2_id: user8.id)
+dm_channel6 = DirectMessageChannel.create(user1_id: user3.id, user2_id: user5.id)
+dm_channel7 = DirectMessageChannel.create(user1_id: user4.id, user2_id: user9.id)
+dm_channel8 = DirectMessageChannel.create(user1_id: user4.id, user2_id: user10.id)
+dm_channel9 = DirectMessageChannel.create(user1_id: user7.id, user2_id: user5.id)
+dm_channel10 = DirectMessageChannel.create(user1_id: user7.id, user2_id: user8.id)
+
+dm1 = DirectMessage.create(author_id: user1.id, channel_id: dm_channel1.id, chat_content: "Who are you?")
+dm2 = DirectMessage.create(author_id: user2.id, channel_id: dm_channel1.id, chat_content: "I'm Baki.")
+dm3 = DirectMessage.create(author_id: user1.id, channel_id: dm_channel2.id, chat_content: "Who are you?")
+dm4 = DirectMessage.create(author_id: user3.id, channel_id: dm_channel2.id, chat_content: "I'm Jennifer")
+dm5 = DirectMessage.create(author_id: user5.id, channel_id: dm_channel3.id, chat_content: "Oh? You're approaching me? Instead of running away, you're coming right to me?")
+dm6 = DirectMessage.create(author_id: user1.id, channel_id: dm_channel3.id, chat_content: "I can't beat the shit out of you without getting closer.")
+dm7 = DirectMessage.create(author_id: user5.id, channel_id: dm_channel3.id, chat_content: "Oh ho! Then come as close as you like.")
+dm8 = DirectMessage.create(author_id: user1.id, channel_id: dm_channel3.id, chat_content: "Ora!")
+dm9 = DirectMessage.create(author_id: user5.id, channel_id: dm_channel3.id, chat_content: "Muda, muda! The World is the ultimate Stand.")
+dm10 = DirectMessage.create(author_id: user5.id, channel_id: dm_channel3.id, chat_content: "His speed and power far exceed that of your Star Platinum.")
+dm11 = DirectMessage.create(author_id: user1.id, channel_id: dm_channel3.id, chat_content: "So it's the same type of Stand as Star Platinum.")
