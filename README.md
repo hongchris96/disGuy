@@ -49,6 +49,8 @@ In the text channel list component:
   })}
 </ul>
 ```
+![text channel index and show](https://github.com/hongchris96/disGuy/blob/main/readme_images/text_channel_list_show.png)
+![text channel create](https://github.com/hongchris96/disGuy/blob/main/readme_images/create_text_channel.png)
 
 In the text channel list item component:
 ```javascript
@@ -60,6 +62,7 @@ In the text channel list item component:
   </Link>
 </li>
 ```
+![text channel update and destroy](https://github.com/hongchris96/disGuy/blob/main/readme_images/text_channel_edit_delete.png)
 
 ------
 ### Live Chat
