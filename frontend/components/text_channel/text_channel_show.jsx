@@ -19,7 +19,7 @@ class TextChannelShow extends React.Component {
       // this is client-side counterpart of chat_channel.rb( ChatChannel Class )
 
       // First Arg: Channel, invoke and create subscription once, subscription persist
-      { channel: "ChatChannel" },
+      { channel: "ChatChannel", id: this.props.match.params.textChannelId, type: 'text_channel'},
       {
         // Second Arg: Received, invoked when broadcast method (backend) transmit data into Channel stream
         received: data => {
@@ -46,6 +46,37 @@ class TextChannelShow extends React.Component {
         }
       }
     );
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.textChannelId !== prevProps.match.params.textChannelId){
+      App.cable.subscriptions.create(
+        { channel: "ChatChannel", id: this.props.match.params.textChannelId, type: 'text_channel'},
+        {
+          received: data => {
+            switch (data.type) {
+              case "message":
+                this.props.receiveTextChannelMessage(data.message);
+                break;
+              case "no_message":
+                this.props.removeTextChannelMessage(data.message.id);
+                break;
+              case "inaction":
+                break;
+            }
+          },
+          speak: function(data) {
+            return this.perform("speak", data);
+          },
+          update: function(data) {
+            return this.perform("update", data);
+          },
+          poof: function(data) {
+            return this.perform("poof", data);
+          }
+        }
+      );
+    }
   }
 
   render(){

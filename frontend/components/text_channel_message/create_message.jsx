@@ -11,7 +11,7 @@ class CreateTextChannelMessageForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // this.props.createTextChannelMessage(this.state);
-    App.cable.subscriptions.subscriptions[0].speak({ message: this.state });
+    App.cable.subscriptions.subscriptions[App.cable.subscriptions.subscriptions.length-1].speak({ message: this.state });
     this.setState({chat_content: ''});
   }
 

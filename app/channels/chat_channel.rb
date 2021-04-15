@@ -1,7 +1,12 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
-    stream_for 'chat_channel'
+    if params[:type] == 'dm'
+      @channel = DirectMessageChannel.find_by(id: params[:id])
+    elsif params[:type] == 'text_channel'
+      @channel = TextChannel.find_by(id: params[:id])
+    end
+    stream_for @channel
   end
 
   def speak(data)
@@ -9,7 +14,7 @@ class ChatChannel < ApplicationCable::Channel
 
     if message.save
       socket = {message: message, type: 'message'}
-      ChatChannel.broadcast_to('chat_channel', socket)
+      ChatChannel.broadcast_to(@channel, socket)
     end
   end
 
@@ -18,7 +23,7 @@ class ChatChannel < ApplicationCable::Channel
 
     if message.update(data['message'])
       socket = {message: message, type: 'message'}
-      ChatChannel.broadcast_to('chat_channel', socket)
+      ChatChannel.broadcast_to(@channel, socket)
     end
   end
 
@@ -28,11 +33,11 @@ class ChatChannel < ApplicationCable::Channel
     if message.author.id == data['currentUser']['id']
       if message.destroy
         socket = {message: message, type: 'no_message'}
-        ChatChannel.broadcast_to('chat_channel', socket)
+        ChatChannel.broadcast_to(@channel, socket)
       end
     else
       socket = { type: 'inaction'}
-      ChatChannel.broadcast_to('chat_channel', socket)
+      ChatChannel.broadcast_to(@channel, socket)
     end
   end
 
@@ -42,7 +47,7 @@ class ChatChannel < ApplicationCable::Channel
 
     if message.save
       socket = {message: message, type: 'message'}
-      ChatChannel.broadcast_to('chat_channel', socket)
+      ChatChannel.broadcast_to(@channel, socket)
     end
   end
 
@@ -51,7 +56,7 @@ class ChatChannel < ApplicationCable::Channel
 
     if message.update(data['message'])
       socket = {message: message, type: 'message'}
-      ChatChannel.broadcast_to('chat_channel', socket)
+      ChatChannel.broadcast_to(@channel, socket)
     end
   end
 
@@ -61,11 +66,11 @@ class ChatChannel < ApplicationCable::Channel
     if message.author.id == data['currentUser']['id']
       if message.destroy
         socket = {message: message, type: 'no_message'}
-        ChatChannel.broadcast_to('chat_channel', socket)
+        ChatChannel.broadcast_to(@channel, socket)
       end
     else
       socket = { type: 'inaction'}
-      ChatChannel.broadcast_to('chat_channel', socket)
+      ChatChannel.broadcast_to(@channel, socket)
     end
   end
 

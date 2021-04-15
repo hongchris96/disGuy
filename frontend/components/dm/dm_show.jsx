@@ -19,7 +19,7 @@ class DMChannelShow extends React.Component {
       // this is client-side counterpart of chat_channel.rb( ChatChannel Class )
 
       // First Arg: Channel, invoke and create subscription once, subscription persist
-      { channel: "ChatChannel" },
+      { channel: "ChatChannel", id: this.props.match.params.dmChannelId, type: 'dm' },
       {
         // Second Arg: Received, invoked when broadcast method (backend) transmit data into Channel stream
         received: data => {
@@ -46,6 +46,37 @@ class DMChannelShow extends React.Component {
         }
       }
     );
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.dmChannelId !== prevProps.match.params.dmChannelId){
+      App.cable.subscriptions.create(
+        { channel: "ChatChannel", id: this.props.match.params.dmChannelId, type: 'dm' },
+        {
+          received: data => {
+            switch (data.type) {
+              case "message":
+                this.props.receiveDirectMessage(data.message);
+                break;
+              case "no_message":
+                this.props.removeDirectMessage(data.message.id);
+                break;
+              case "inaction":
+                break;
+            }
+          },
+          speak2: function(data) {
+            return this.perform("speak2", data);
+          },
+          update2: function(data) {
+            return this.perform("update2", data);
+          },
+          poof2: function(data) {
+            return this.perform("poof2", data);
+          }
+        }
+      );
+    }
   }
 
   render(){

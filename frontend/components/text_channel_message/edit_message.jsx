@@ -14,7 +14,7 @@ class EditTextChannelMessageForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // this.props.updateTextChannelMessage(this.state);
-    App.cable.subscriptions.subscriptions[0].update({ message: this.state });
+    App.cable.subscriptions.subscriptions[App.cable.subscriptions.subscriptions.length-1].update({ message: this.state });
     this.props.closeEditMessage();
   }
 

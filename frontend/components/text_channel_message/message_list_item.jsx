@@ -30,7 +30,7 @@ class TextChannelMessageListItem extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     // this.props.deleteMessage(this.props.message.id);
-    App.cable.subscriptions.subscriptions[0].poof({ message: this.props.message,  currentUser: this.props.currentUser});
+    App.cable.subscriptions.subscriptions[App.cable.subscriptions.subscriptions.length-1].poof({ message: this.props.message,  currentUser: this.props.currentUser});
   }
 
   openEditMessage(e) {
