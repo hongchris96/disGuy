@@ -9,6 +9,7 @@ class ServerList extends React.Component {
   }
 
   componentDidMount(){
+    this.props.requestUsers();
     this.props.requestServers();
   }
 

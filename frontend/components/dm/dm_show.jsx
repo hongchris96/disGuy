@@ -12,6 +12,9 @@ class DMChannelShow extends React.Component {
   }
 
   componentDidMount() {
+    if (this.props.allUsers.length === 0) {
+      this.props.requestUsers();
+    }
     this.props.requestDMChannel(this.props.match.params.dmChannelId);
 
     // Action Cable Stuff

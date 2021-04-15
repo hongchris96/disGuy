@@ -9,6 +9,9 @@ class DMChannelList extends React.Component {
   }
 
   componentDidMount(){
+    if (this.props.allUsers.length === 0) {
+      this.props.requestUsers();
+    }
     this.props.requestDMChannels();
   }
 
