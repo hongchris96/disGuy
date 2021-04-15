@@ -25,6 +25,7 @@ class DirectMessageList extends React.Component {
         key={message.id}
         message={message}
         currentUser={this.props.currentUser}
+        allUsers={this.props.allUsers}
         deleteMessage={this.props.deleteDirectMessage}
       />
     })}

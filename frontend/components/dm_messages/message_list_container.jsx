@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 const mapSTP = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
+    allUsers: Object.values(state.entities.users),
     directMessages: Object.values(state.entities.directMessages),
     currentDMChannel: state.entities.dmChannels[ownProps.location.pathname.split("/")[3]]
   }
