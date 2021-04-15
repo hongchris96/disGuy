@@ -6,6 +6,12 @@ class DMListItem extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    if (this.props.allUsers.length === 0) {
+      this.props.requestUsers();
+    }
+  }
+
   render(){
 
     let shortenDisplay;
