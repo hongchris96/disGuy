@@ -14,7 +14,6 @@ class TextChannelShow extends React.Component {
   componentDidMount() {
     this.props.requestTextChannel(this.props.match.params.textChannelId);
 
-    console.log("create text channel sub");
     // Action Cable Stuff
     App.cable.subscriptions.create(
       // this is client-side counterpart of chat_channel.rb( ChatChannel Class )

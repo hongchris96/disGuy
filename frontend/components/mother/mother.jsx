@@ -23,10 +23,14 @@ class Mother extends React.Component {
     return (
       <div className="mother">
         <ServerListContainer />
-        <Route path="/servers/@me" component={LandingZoneContainer} />
-        <Route path="/servers/@me/:dmChannelId" component={DMChannelShowContainer} />
-        <Route path='/servers/:serverId' component={ServerShowContainer} />
-        <Route path='/servers/:serverId/:textChannelId' component={TextChannelShowContainer} />
+        <Switch>
+          <Route path="/servers/@me" component={LandingZoneContainer} />
+          <Route path='/servers/:serverId' component={ServerShowContainer} />
+        </Switch>
+        <Switch>
+          <Route path="/servers/@me/:dmChannelId" component={DMChannelShowContainer} />
+          <Route path='/servers/:serverId/:textChannelId' component={TextChannelShowContainer} />
+        </Switch>
       </div>
     )
   }

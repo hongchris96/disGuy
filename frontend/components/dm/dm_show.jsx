@@ -15,7 +15,6 @@ class DMChannelShow extends React.Component {
     this.props.requestDMChannel(this.props.match.params.dmChannelId);
 
     // Action Cable Stuff
-    console.log("create dm sub");
     App.cable.subscriptions.create(
       // this is client-side counterpart of chat_channel.rb( ChatChannel Class )
 

@@ -12,7 +12,6 @@ class CreateDMChannelForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     this.props.createDMChannel(this.state);
   }
