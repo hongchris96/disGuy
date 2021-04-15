@@ -10,8 +10,8 @@ class CreateDirectMessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createDirectMessage(this.state);
-    // App.cable.subscriptions.subscriptions[0].speak({ message: this.state });
+    // this.props.createDirectMessage(this.state);
+    App.cable.subscriptions.subscriptions[0].speak2({ message: this.state });
     this.setState({chat_content: ''});
   }
 

@@ -29,8 +29,8 @@ class DirectMessageListItem extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.deleteMessage(this.props.message.id);
-    // App.cable.subscriptions.subscriptions[0].poof({ message: this.props.message,  currentUser: this.props.currentUser});
+    // this.props.deleteMessage(this.props.message.id);
+    App.cable.subscriptions.subscriptions[0].poof2({ message: this.props.message,  currentUser: this.props.currentUser});
   }
 
   openEditMessage(e) {

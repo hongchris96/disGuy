@@ -13,8 +13,8 @@ class EditDirectMessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateDirectMessage(this.state);
-    // App.cable.subscriptions.subscriptions[0].update({ message: this.state });
+    // this.props.updateDirectMessage(this.state);
+    App.cable.subscriptions.subscriptions[0].update2({ message: this.state });
     this.props.closeEditMessage();
   }
 
