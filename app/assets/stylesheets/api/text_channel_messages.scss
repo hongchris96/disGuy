@@ -15,6 +15,7 @@
 .messages-content {
   position: relative;
   // border: 1px solid black;
+  overflow-y: scroll;
   margin: 10px;
   width: calc(100% - 20px);
 }
@@ -37,6 +38,7 @@
 
 .text-channel-message-list > li > p {
   line-height: 22px;
+  overflow-wrap: break-word;
 }
 
 .text-channel-message-list > li > p:first-of-type {

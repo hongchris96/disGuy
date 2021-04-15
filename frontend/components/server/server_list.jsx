@@ -10,6 +10,7 @@ class ServerList extends React.Component {
 
   componentDidMount(){
     this.props.requestServers();
+    this.props.requestUsers();
   }
 
   render(){

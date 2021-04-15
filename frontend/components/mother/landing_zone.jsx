@@ -15,9 +15,9 @@ class LandingZone extends React.Component {
   }
 
   // Questionable
-  componentWillMount() {
-    this.props.requestUsers();
-  }
+  // componentWillMount() {
+  //   this.props.requestUsers();
+  // }
 
   openHomeSetting(e) {
     e.preventDefault();
