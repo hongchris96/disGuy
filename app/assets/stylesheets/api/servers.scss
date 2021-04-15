@@ -99,22 +99,13 @@
 
 /* home page mother-body */
 
-.mother-body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  height: 1fr;
-  max-height: 1fr;
-}
-
 .channel-sidebar {
   width: 240px;
   background-color: rgb(47,49,54);
 }
 
 
-/* temporary */
+/* landing */
 .channel-sidebar > p {
   font-size: 16px;
   font-weight: bold;
@@ -123,53 +114,22 @@
   border-bottom: 1.5px solid rgb(35,37,39);
 }
 
-.chat-box {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: inherit;
-}
-
-nav.chat-box-top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 46px;
-  border-bottom: 1.5px solid rgb(43,45,50);
-}
-
-nav.chat-box-top > * {
-  // temporary
-  margin-right: 20px;
-  margin-left: 20px;
-  letter-spacing: 0.8px;
-}
-// temporary
-nav.chat-box-top > button {
+.logout {
+  height: 32px;
+  width: 195px;
   border: none;
-  border-radius: 10px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  color: rgb(135, 180, 249);
-}
-// temporary
-nav.chat-box-top > button:hover {
-  background-color: rgb(176, 203, 250);
   color: white;
-  transition: 0.3s;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-// temporary
-.chat-box-content {
-  height: inherit;
-  flex-grow: 1;
+  background-color: rgb(120,140,220);
+  font-family: "Whitney";
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: rgb(167, 24, 24);
+  transition: 0.3s;
 }
 

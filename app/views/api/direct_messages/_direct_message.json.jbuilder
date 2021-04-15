@@ -1,0 +1,1 @@
+json.extract! direct_message, :id, :author_id, :channel_id, :chat_content

@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   mount ActionCable.server, at: '/cable'
   
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:show, :create]
+    resources :users, only: [:index, :show, :create]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
     resource :session, only: [:create, :destroy]
     resources :text_channels, only: [:index, :show, :create, :update, :destroy]
     resources :text_channel_messages, only:  [:index, :create, :update, :destroy]
+    resources :direct_message_channels, only: [:index, :show, :create, :destroy]
+    resources :direct_messages, only:  [:index, :create, :update, :destroy]
     resources :server_members, only: [:create, :destroy]
   end
 end

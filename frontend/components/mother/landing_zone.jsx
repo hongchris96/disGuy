@@ -2,25 +2,48 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../../utils/route_util';
 import {Route, Switch} from 'react-router-dom';
 import {Link} from 'react-router-dom';
-import ServerShowContainer from '../server/server_show_container';
+import DMListContainer from '../dm/dmlist_container';
 
-const LandingZone = (props) => {
-  return (
-    <div className="mother-body">
+class LandingZone extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dropdownVisible: false
+    };
+
+    this.openHomeSetting = this.openHomeSetting.bind(this);
+  }
+
+  // Questionable
+  componentWillMount() {
+    this.props.requestUsers();
+  }
+
+  openHomeSetting(e) {
+    e.preventDefault();
+    this.setState(prevState => ({ dropdownVisible: !prevState.dropdownVisible }));
+  }
+
+  render() {
+    
+    if (this.props.currentUser === undefined) {
+      return null;
+    }
+
+    return (
       <div className="channel-sidebar">
-        <p>DM list or Server Channel list</p>
-      </div>
-      <div className="chat-box">
-        <nav className="chat-box-top">
-          <h1>You are Logged in as {props.currentUser.username}</h1>
-          <button onClick={props.logout}>Logout</button>
+        <nav className="server-show" onClick={this.openHomeSetting} >
+          <h3>{this.props.currentUser.username}</h3>
+          <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
         </nav>
-        <div className="chat-box-content">
-          <h1>CHAT ZONE</h1>
+        <div className={`server-setting-dropdown ${this.state.dropdownVisible ? "" : "hidden"}`}>
+          <button className="logout" onClick={this.props.logout}>Logout</button>
         </div>
+        <DMListContainer />
       </div>
-    </div>
-  )
+    )
+
+  }
 }
 
 export default LandingZone;

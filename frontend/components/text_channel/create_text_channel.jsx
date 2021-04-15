@@ -49,6 +49,7 @@ class CreateTextChannelForm extends React.Component {
   }
 
   render(){
+    // redirect not working
     let channelLast = this.props.allTextChannelIds[this.props.allTextChannelIds.length - 1];
     let redirectToTextChannel = this.state.redirectToCreatedTextChannel;
     let serverLoc = Number(this.props.location.pathname.split('/')[2]);

@@ -23,7 +23,7 @@ class Api::TextChannelMessagesController < ApplicationController
         render json: @text_channel_message.errors.full_messages, status: 422
       end
     else
-      render json: ['Must be Server Owner to make changes'], status: 401
+      render json: ['Must be Author to make changes'], status: 401
     end
   end
 
