@@ -50,6 +50,17 @@ In the text channel list component:
 </ul>
 ```
 ![text channel index and show](https://github.com/hongchris96/disGuy/blob/main/readme_images/text_channel_list_show.png)
+
+In my create text channel modal, I want the modal to close on submission only if there are no errors. Before I close the modal, I check if the errors array length is zero and if the global slice of state's text channels count is different, meaning a text channel has be successfully added. 
+```javascript
+componentDidUpdate(prevProps) {
+  if (this.props.errors.length === 0 && this.props.allTextChannelIds.length !== prevProps.allTextChannelIds.length) {
+    this.setState({redirectToCreatedTextChannel: true});
+    this.props.closeModal();
+  }
+}
+```
+
 ![text channel create](https://github.com/hongchris96/disGuy/blob/main/readme_images/create_text_channel.png)
 
 In the text channel list item component:
@@ -62,6 +73,25 @@ In the text channel list item component:
   </Link>
 </li>
 ```
+
+Sometimes when I open a different channel's settings component within the same server, the local state's information of the text channel remains to be the previous one's. Additionally, I want the settings to close on submission only if there are no errors. To solve the first problem, I conditionally check if the channel id in my path matches the current state's id and reset the state if they're different. To solve the second problem, I checked the error array length and if the channel name is different before closing my edit settings, meaning that I have successfully updated the channel name.
+```javascript
+componentDidUpdate(prevProps) {
+  if (this.props.channel !== undefined && this.state.id !== this.props.channel.id) {
+    this.props.requestTextChannel(this.props.channel.id);
+    this.setState({
+      id: this.props.channel.id,
+      server_id: this.props.channel.server_id,
+      text_channel_name: this.props.channel.text_channel_name
+    });
+  } else if (this.props.channel !== undefined && prevProps.channel !== undefined) {
+    if (this.props.errors.length === 0 && this.props.channel.text_channel_name !== prevProps.channel.text_channel_name) {
+      this.props.closeEditSetting();
+    }
+  }
+}
+```
+
 ![text channel update and destroy](https://github.com/hongchris96/disGuy/blob/main/readme_images/text_channel_edit_delete.png)
 
 ------
