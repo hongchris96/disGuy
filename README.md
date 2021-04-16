@@ -145,6 +145,7 @@ handleSubmit(e) {
 ### Future Features
 
 * Server Membership and User accessibility restrictions 
+* Server and User image upload
 * Default general text channel upon new server creation
 * User profile page and settings
 * User friends list
