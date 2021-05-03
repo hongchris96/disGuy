@@ -4,7 +4,14 @@
     <title>DisGuy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta property="og:title" content="DisGuy" />
+    <meta property='og:image' content="<%= image_url('disGuy_login.png') %>"/>
+    <meta property="og:description"
+      content="A single-page web application inspired by Discord, an instant messaging platform. Built with Ruby on Rails and React with Redux."
+    />
+    <meta property="og:url"
+      content="https://disguy.herokuapp.com/#/"
+    />
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
