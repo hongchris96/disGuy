@@ -1,0 +1,1 @@
+json.partial! 'server_member', server_member: @server_member
