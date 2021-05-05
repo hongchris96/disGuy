@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_061835) do
+ActiveRecord::Schema.define(version: 2021_05_05_214210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_14_061835) do
     t.integer "host_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "invite_code", null: false
     t.index ["host_id"], name: "index_servers_on_host_id"
     t.index ["server_name", "host_id"], name: "index_servers_on_server_name_and_host_id", unique: true
     t.index ["server_name"], name: "index_servers_on_server_name", unique: true
