@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
 import ServersReducer from './server_entity/servers_reducer';
+import ServerMembersReducer from './server_entity/server_members_reducer';
 import TextChannelsReducer from './text_channel_entity/text_channels_reducer';
 import TextChannelMessagesReducer from './text_channel_entity/text_channel_messages_reducer';
 import DMChannelsReducer from './dm_entity/dm_channels_reducer';
@@ -13,7 +14,8 @@ const EntitiesReducer = combineReducers({
   textChannelMessages: TextChannelMessagesReducer,
   dmChannels: DMChannelsReducer,
   directMessages: DirectMessagesReducer,
-  users: UsersReducer
+  users: UsersReducer,
+  serverMembers: ServerMembersReducer
   // going to add other tables
 });
 
