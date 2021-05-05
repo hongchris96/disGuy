@@ -44,25 +44,38 @@
 }
 
 .server-setting-dropdown > * {
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
   margin-bottom: 0px;
   margin-top: 3px;
   padding: 10px;
   font-size: 15px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   position: relative;
 }
 
-.server-setting-dropdown > * > img {
+.server-setting-dropdown > p:first-of-type {
+  color: rgb(120,140,220);
+  transition: 0.3s;
+}
+
+.server-setting-dropdown > p:first-of-type > img {
+  width: 10%;
+  height: auto;
+  position: absolute;
+  top: 8px;
+  right: 6px;
+}
+
+.server-setting-dropdown > p > img {
   width: 10%;
   height: auto;
   position: absolute;
   right: 7px;
 }
 
-.server-setting-dropdown > *:hover {
+.server-setting-dropdown > p:hover {
   color: white;
   background-color: rgb(120,140,220);
   transition: 0.3s;
