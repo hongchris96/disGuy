@@ -3,7 +3,7 @@ class Api::ServersController < ApplicationController
   before_action :require_logged_in!
 
   def index
-    @servers = current_user.membered_servers # NEED to be membered servers of current user
+    @servers = current_user.membered_servers + current_user.owned_servers # NEED to be membered servers of current user
     render :index
   end
 
