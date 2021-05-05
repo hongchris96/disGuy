@@ -1,5 +1,12 @@
 class Api::ServerMembersController < ApplicationController
 
+  before_action :require_logged_in!
+
+  def index
+    @server_members = ServerMember.all
+    render :index
+  end
+
   def create
     @server_member = ServerMemeber.new(server_member_params)
     if @server_member.save
