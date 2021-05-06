@@ -59,7 +59,10 @@ class ServerShow extends React.Component {
           <p>{this.state.dropdownVisible ? `\u2715` : `\u25BE`}</p>
         </nav>
         <div className={`server-setting-dropdown ${this.state.dropdownVisible ? "" : "hidden"}`}>
-          <p onClick={this.props.openModal("InviteModal")}>Invite People <img src={window.inviteURL}/></p>
+          <p onClick={() => {
+            this.props.openModal("InviteModal");
+            this.setState({dropdownVisible: false});
+          }}>Invite People <img src={window.inviteURL}/></p>
           <p onClick={this.openEditServer}>Server Settings <img src={window.cogURL}/></p>
         </div>
         <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
