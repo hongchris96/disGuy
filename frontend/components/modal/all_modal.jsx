@@ -4,6 +4,8 @@ import CreateServerContainer from '../server/create_server_container';
 import CreateTextChannelContainer from '../text_channel/create_text_channel_container';
 import CreateDMChannelContainer from '../dm/create_dm_channel_container';
 import AddNewServerContainer from './add_new_server_container';
+import InviteModalContainer from '../server/invite_modal_container';
+import JoinServerContainer from '../server/join_server_container';
 
 class AllModal extends React.Component {
   constructor(props) {
@@ -16,6 +18,8 @@ class AllModal extends React.Component {
     else if (this.props.modal === "AddNewServer") whichModal = <AddNewServerContainer />;
     else if (this.props.modal === "CreateTextChannel") whichModal = <CreateTextChannelContainer />;
     else if (this.props.modal === "CreateDMChannel") whichModal = <CreateDMChannelContainer />;
+    else if (this.props.modal === "InviteModal") whichModal = <InviteModalContainer />;
+    else if (this.props.modal === "JoinServer") whichModal = <JoinServerContainer />;
     else whichModal = null;
 
     return (
