@@ -5,7 +5,8 @@ import { clearErrors } from '../../actions/session/session_actions';
 import ServerShow from './server_show';
 
 const mapSTP = (state, ownProps) => ({
-  server: state.entities.servers[ownProps.match.params.serverId]
+  server: state.entities.servers[ownProps.match.params.serverId],
+  currentUser: state.session.currentUser
 });
 
 const mapDTP = dispatch => ({
