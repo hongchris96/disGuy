@@ -32,6 +32,14 @@ user11 = User.create(username: "Eren Jaegar", email: "attack@gmail.com", passwor
 server1 = Server.create(server_name: "Stardust Crusaders", host_id: user1.id)
 server2 = Server.create(server_name: "Morioh Cho", host_id: user2.id)
 server3 = Server.create(server_name: "Act Academy", host_id: user6.id)
+server4 = Server.create(server_name: "Passione", host_id: user11.id)
+server5 = Server.create(server_name: "Stone Ocean", host_id: user1.id)
+server6 = Server.create(server_name: "Mugen Train", host_id: user5.id)
+server7 = Server.create(server_name: "Nyanko Sensei's classroom", host_id: user11.id)
+server8 = Server.create(server_name: "Tesla", host_id: user11.id)
+server9 = Server.create(server_name: "Soul Society", host_id: user11.id)
+server10 = Server.create(server_name: "Heaven", host_id: user11.id)
+
 
 server_member1 = ServerMember.create(server_id: server2.id, member_id: user1.id)
 server_member2 = ServerMember.create(server_id: server3.id, member_id: user4.id)
@@ -48,6 +56,11 @@ text_channel2 = TextChannel.create(server_id: server1.id, text_channel_name: "Pa
 text_channel3 = TextChannel.create(server_id: server1.id, text_channel_name: "Egypt")
 text_channel4 = TextChannel.create(server_id: server2.id, text_channel_name: "Trattoria Trussardi")
 text_channel5 = TextChannel.create(server_id: server2.id, text_channel_name: "Angelo Stone")
+text_channel6 = TextChannel.create(server_id: server4.id, text_channel_name: "General")
+text_channel7 = TextChannel.create(server_id: server7.id, text_channel_name: "General")
+text_channel8 = TextChannel.create(server_id: server8.id, text_channel_name: "General")
+text_channel9 = TextChannel.create(server_id: server9.id, text_channel_name: "General")
+text_channel10 = TextChannel.create(server_id: server10.id, text_channel_name: "General")
 
 
 # server 1 channel 1
