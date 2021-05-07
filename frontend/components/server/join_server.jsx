@@ -15,7 +15,6 @@ class JoinServerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // let serverId = this.props.allServerIds.filter(serverId => this.props.allServers[serverId].invite_code === this.state.invCode)[0];
     let memberId = this.props.serverMember.member_id;
     let serverMemberObj = {member_id: memberId, invite_code: this.state.invCode}
     this.props.joinServer(serverMemberObj);
@@ -30,8 +29,10 @@ class JoinServerForm extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (this.state.invCode[0] === " ") this.setState({invCode: this.state.invCode.slice(1)});
     if (this.props.errors.length === 0 && this.props.allServerIds.length !== prevProps.allServerIds.length) {
       this.setState({redirectToCreatedServer: true});
+      this.props.closeModal();
     }
   }
 

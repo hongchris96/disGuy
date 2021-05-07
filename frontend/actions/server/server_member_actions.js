@@ -1,5 +1,7 @@
 import * as ServerMemberAPIUtil from '../../utils/server_member_api_util';
 
+import {requestServers} from './server_actions';
+
 export const RECEIVE_SERVER_MEMBERS = "RECEIVE_SERVER_MEMBERS";
 export const JOIN_SERVER = "JOIN_SERVER";
 export const LEAVE_SERVER = "LEAVE_SERVER";
@@ -32,8 +34,9 @@ export const requestServerMembers = () => dispatch => {
 
 export const createServerMember = (serverMember) => dispatch => {
   return ServerMemberAPIUtil.createServerMember(serverMember)
-    .then(serverMember => (dispatch(joinServer(serverMember))),
-    err => (dispatch(receiveServerMemberErrors(err.responseJSON))));
+    .then(serverMember => (dispatch(joinServer(serverMember))))
+    .then(() => dispatch(requestServers()))
+    .fail(err => (dispatch(receiveServerMemberErrors(err.responseJSON))));
 };
 
 export const deleteServerMember = (serverMemberId) => dispatch => {
