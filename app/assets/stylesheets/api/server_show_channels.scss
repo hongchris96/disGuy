@@ -38,9 +38,9 @@
   background-color: rgb(24,25,28);
   color: rgb(185,187,190);
   border-radius: 5px;
-  height: 100px;
   width: 220px;
   padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .server-setting-dropdown > * {
@@ -78,6 +78,25 @@
 .server-setting-dropdown > p:hover {
   color: white;
   background-color: rgb(120,140,220);
+  transition: 0.3s;
+}
+
+.server-setting-dropdown > p.leave-button {
+  color: rgb(237,71,70);
+  transition: 0.3s;
+}
+
+.server-setting-dropdown > p.leave-button > img {
+  width: 13%;
+  height: auto;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.server-setting-dropdown > p.leave-button:hover {
+  color: white;
+  background-color: rgb(237,71,70);
   transition: 0.3s;
 }
 

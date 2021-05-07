@@ -64,6 +64,7 @@ class ServerShow extends React.Component {
             this.setState({dropdownVisible: false});
           }}>Invite People <img src={window.inviteURL}/></p>
           <p onClick={this.openEditServer}>Server Settings <img src={window.cogURL}/></p>
+          <p className="leave-button">Leave Server <img src={window.leaveURL}/></p>
         </div>
         <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
           <EditServerContainer server={this.props.server} showPageProps={this.props} closeEditSetting={this.openEditServer}/>
