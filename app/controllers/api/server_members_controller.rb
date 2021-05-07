@@ -8,11 +8,17 @@ class Api::ServerMembersController < ApplicationController
   end
 
   def create
-    @server_member = ServerMemeber.new(server_member_params)
-    if @server_member.save
-      render :show
+    # debugger
+    @server = Server.find_by(invite_code: params[:server_member][:invite_code])
+    if @server
+      @server_member = ServerMember.new({member_id: params[:server_member][:member_id], server_id: @server[:id]})
+      if @server_member.save
+        render :show
+      else
+        render json: @server_member.errors.full_messages, status: 422
+      end
     else
-      render json: ['Server you\'re trying to join does not exist'], status: 422
+      render json: ['There\'s no server with that invite code'], status: 422
     end
   end
 
@@ -26,8 +32,4 @@ class Api::ServerMembersController < ApplicationController
     end
   end
 
-  private
-  def server_member_params
-    params.require(:server_member).permit(:server_id, :member_id)
-  end
 end

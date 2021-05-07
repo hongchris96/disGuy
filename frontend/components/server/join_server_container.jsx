@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { joinServer } from '../../actions/server/server_member_actions';
+import { createServerMember } from '../../actions/server/server_member_actions';
 import { clearErrors } from '../../actions/session/session_actions';
 import { openModal, closeModal } from '../../actions/modal/modal_actions';
 import JoinServerForm from './join_server';
@@ -9,7 +9,7 @@ const mapSTP = (state) => ({
   allServerIds: Object.keys(state.entities.servers),
   allServerMembers: Object.keys(state.entities.serverMembers),
   errors: state.errors.server,
-  serverMemeber: {
+  serverMember: {
     member_id: state.session.currentUser.id, 
     server_id: ""
   },
@@ -17,7 +17,7 @@ const mapSTP = (state) => ({
 });
 
 const mapDTP = dispatch => ({
-  joinServer: (serverMember) => dispatch(joinServer(serverMember)),
+  joinServer: (serverMember) => dispatch(createServerMember(serverMember)),
   openModal: (componentName) => dispatch(openModal(componentName)),
   closeModal: () => dispatch(closeModal()),
   clearErrors: () => dispatch(clearErrors())

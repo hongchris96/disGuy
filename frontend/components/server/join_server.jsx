@@ -15,8 +15,10 @@ class JoinServerForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let serverId = this.props.allServerIds.filter(serverId => this.props.allServers[serverId].invite_code === this.state.invCode)[0];
-    this.props.joinServer({member_id: this.props.serverMember.member_id, server_id: serverId});
+    // let serverId = this.props.allServerIds.filter(serverId => this.props.allServers[serverId].invite_code === this.state.invCode)[0];
+    let memberId = this.props.serverMember.member_id;
+    let serverMemberObj = {member_id: memberId, invite_code: this.state.invCode}
+    this.props.joinServer(serverMemberObj);
   }
 
   updateInput(field) {
@@ -67,12 +69,11 @@ class JoinServerForm extends React.Component {
             <h1>Join a Server</h1>
             <p>Enter an invite below to join an existing server</p>
           </div>
-          <img className="upload-img" src={window.noUploadURL}/>
           <label>{this.renderLabelTitle()}
-            <input type="text" value={this.state.server_name} onChange={this.updateInput('server_name')}/>
+            <input type="text" value={this.state.invCode} onChange={this.updateInput('invCode')}/>
           </label>
           <p>INVITES SHOULD LOOK LIKE</p>
-          <p className="undernote">lsjdfoije3OIJDFOSIJsdflj</p>
+          <p className="undernote">nJpxHTGYDOdYChkD0OvJXQ</p>
 
           <div className="create-server-buttons">
             <p onClick={() => this.props.openModal("AddNewServer")}>Back</p>

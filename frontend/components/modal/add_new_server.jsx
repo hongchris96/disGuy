@@ -27,7 +27,7 @@ class AddNewServer extends React.Component {
 
           <div className="modal-go-join-server">
             <h1>Have an invite already?</h1>
-            <p>Join a server {`(inactive)`}</p>
+            <p onClick={() => this.props.openModal("JoinServer")}>Join a server</p>
           </div>
         </div>
 
