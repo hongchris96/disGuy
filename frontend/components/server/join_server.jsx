@@ -66,17 +66,21 @@ class JoinServerForm extends React.Component {
 
     return(
       <div>
-        <form className="create-server-form" onSubmit={this.handleSubmit}>
+        <form className="join-server-form" onSubmit={this.handleSubmit}>
           <p className="close-modal" onClick={() => this.props.closeModal()}>{`\u2715`}</p>
-          <div className="create-server-heading">
+          <div className="join-server-heading">
             <h1>Join a Server</h1>
             <p>Enter an invite below to join an existing server</p>
           </div>
           <label>{this.renderLabelTitle()}
-            <input type="text" value={this.state.invCode} onChange={this.updateInput('invCode')}/>
+            <input type="text" value={this.state.invCode} onChange={this.updateInput('invCode')} placeholder="nJpxHTGYDOdYChkD0OvJXQ"/>
           </label>
-          <p>INVITES SHOULD LOOK LIKE</p>
-          <p className="undernote">nJpxHTGYDOdYChkD0OvJXQ</p>
+          <p className="undernote-title">INVITES SHOULD LOOK LIKE</p>
+          <div className="undernotes">
+            <p>nJpxHTGYDOdYChkD0OvJXQ</p>
+            <p>US_vpZ-i1nREkQwmjnaKkg</p>
+            <p>JvXB7bIezCxS2VDJgDSzdw</p>
+          </div>
 
           <div className="create-server-buttons">
             <p onClick={() => this.props.openModal("AddNewServer")}>Back</p>

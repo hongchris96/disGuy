@@ -19,6 +19,7 @@ class SeeInviteLink extends React.Component {
   }
 
   copy(e) {
+    e.preventDefault();
     document.querySelector('.inv-text').select();
     document.execCommand('copy');
     let copyButton = document.querySelector('.copy-button')
