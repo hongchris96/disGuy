@@ -15,6 +15,6 @@ Rails.application.routes.draw do
     resources :text_channel_messages, only:  [:index, :create, :update, :destroy]
     resources :direct_message_channels, only: [:index, :show, :create, :destroy]
     resources :direct_messages, only:  [:index, :create, :update, :destroy]
-    resources :server_members, only: [:create, :destroy]
+    resources :server_members, only: [:create, :destroy, :index]
   end
 end
