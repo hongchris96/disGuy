@@ -3,6 +3,7 @@ import { requestDMChannel } from '../../actions/dm/dm_channel_actions';
 import { receiveDirectMessage, removeDirectMessage } from '../../actions/dm/direct_message_actions';
 import DMChannelShow from './dm_show';
 import { requestUsers } from '../../actions/user/user_actions';
+import { closeModal } from '../../actions/modal/modal_actions';
 
 const mapSTP = (state, ownProps) => {
   return ({
@@ -16,7 +17,8 @@ const mapDTP = dispatch => ({
   receiveDirectMessage: (message) => dispatch(receiveDirectMessage(message)),
   removeDirectMessage: (messageId) => dispatch(removeDirectMessage(messageId)),
   requestDMChannel: (dmChannelId) => dispatch(requestDMChannel(dmChannelId)),
-  requestUsers: () => dispatch(requestUsers())
+  requestUsers: () => dispatch(requestUsers()),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mapSTP, mapDTP)(DMChannelShow);
