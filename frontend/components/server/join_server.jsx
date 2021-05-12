@@ -18,6 +18,7 @@ class JoinServerForm extends React.Component {
     let memberId = this.props.serverMember.member_id;
     let serverMemberObj = {member_id: memberId, invite_code: this.state.invCode}
     this.props.joinServer(serverMemberObj);
+    this.props.closeModal();
   }
 
   updateInput(field) {

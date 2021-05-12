@@ -14,6 +14,7 @@ class CreateServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createServer(this.state);
+    this.props.closeModal();
   }
 
   updateInput(field) {

@@ -40,5 +40,8 @@ export const createServerMember = (serverMember) => dispatch => {
 };
 
 export const deleteServerMember = (serverMemberId) => dispatch => {
-  return ServerMemberAPIUtil.deleteServerMember(serverMemberId).then(() => dispatch(leaveServer(serverMemberId)));
+  return ServerMemberAPIUtil.deleteServerMember(serverMemberId)
+    .then(() => dispatch(leaveServer(serverMemberId)))
+    .then(() => dispatch(requestServers()))
+    .fail(err => (dispatch(receiveServerMemberErrors(err.responseJSON))));
 };
