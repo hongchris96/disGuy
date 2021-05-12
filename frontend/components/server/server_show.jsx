@@ -27,6 +27,7 @@ class ServerShow extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.server !== prevProps.server) {
       this.setState(() => ({ dropdownVisible: false }));
+      this.props.closeModal();
     }
   }
 
