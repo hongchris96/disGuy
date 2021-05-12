@@ -12,10 +12,16 @@ class ServerShow extends React.Component {
 
     this.openServerSetting = this.openServerSetting.bind(this);
     this.openEditServer = this.openEditServer.bind(this);
+    this.handleLeaveServer = this.handleLeaveServer.bind(this);
   }
 
   componentDidMount() {
-    this.props.requestServer(this.props.match.params.serverId);
+    if (this.props.match.params.serverId === "undefined") {
+      this.props.history.push('/servers/@me');
+    } else {
+      this.props.requestServer(this.props.match.params.serverId);
+      this.props.requestServerMembers();
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -38,6 +44,14 @@ class ServerShow extends React.Component {
     }));
   }
 
+  handleLeaveServer(e) {
+    e.preventDefault();
+    let memberId = this.props.currentUser.id
+    let serverMember = this.props.allServerMembers.filter(sm => sm.member_id === memberId && sm.server_id === this.props.server.id);
+    this.props.leaveServer(serverMember[0].id);
+    this.props.history.push('/servers/@me');
+  }
+
   render() {
 
     if (this.props.server === undefined) {
@@ -53,7 +67,7 @@ class ServerShow extends React.Component {
     }
     let leaveBut;
     if (this.props.currentUser.id !== this.props.server.host_id) {
-      leaveBut = <p className="leave-button">Leave Server <img src={window.leaveURL}/></p>
+      leaveBut = <p className="leave-button" onClick={this.handleLeaveServer}>Leave Server <img src={window.leaveURL}/></p>
     }
 
     return (

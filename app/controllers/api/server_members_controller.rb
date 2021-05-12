@@ -23,7 +23,7 @@ class Api::ServerMembersController < ApplicationController
   end
 
   def destroy
-    @server_member = current_user.server_member_joins.find_by(member_id: params[:member_id])
+    @server_member = current_user.server_member_joins.find_by(id: params[:id])
     if @server_member
       @server_member.destroy
       render :show
