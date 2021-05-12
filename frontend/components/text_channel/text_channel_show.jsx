@@ -13,7 +13,7 @@ class TextChannelShow extends React.Component {
 
   componentDidMount() {
     this.props.requestTextChannel(this.props.match.params.textChannelId);
-
+    this.props.closeModal();
     // Action Cable Stuff
     App.cable.subscriptions.create(
       // this is client-side counterpart of chat_channel.rb( ChatChannel Class )
@@ -50,6 +50,7 @@ class TextChannelShow extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.textChannelId !== prevProps.match.params.textChannelId){
+      this.props.closeModal();
       App.cable.subscriptions.create(
         { channel: "ChatChannel", id: this.props.match.params.textChannelId, type: 'text_channel'},
         {

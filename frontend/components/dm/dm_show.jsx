@@ -16,7 +16,7 @@ class DMChannelShow extends React.Component {
       this.props.requestUsers();
     }
     this.props.requestDMChannel(this.props.match.params.dmChannelId);
-
+    this.props.closeModal();
     // Action Cable Stuff
     App.cable.subscriptions.create(
       // this is client-side counterpart of chat_channel.rb( ChatChannel Class )
@@ -53,6 +53,7 @@ class DMChannelShow extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.dmChannelId !== prevProps.match.params.dmChannelId){
+      this.props.closeModal();
       App.cable.subscriptions.create(
         { channel: "ChatChannel", id: this.props.match.params.dmChannelId, type: 'dm' },
         {

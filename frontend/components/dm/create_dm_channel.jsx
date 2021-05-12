@@ -28,7 +28,7 @@ class CreateDMChannelForm extends React.Component {
     if (this.props.allDMChannels !== undefined) {
       if (this.props.allDMChannels.length !== prevProps.allDMChannels.length) {
         this.setState({redirectToCreatedDMChannel: true});
-        this.props.closeModal();
+        // this.props.closeModal();
       }
     }
   }
