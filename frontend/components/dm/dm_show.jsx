@@ -1,6 +1,9 @@
 import React from 'react';
 import DMMessageListContainer from '../dm_messages/message_list_container';
 import CreateDirectMessageContainer from '../dm_messages/create_message_container';
+import {faGithub, faLinkedin, faAngellist} from "@fortawesome/free-brands-svg-icons";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 class DMChannelShow extends React.Component {
   constructor(props) {
@@ -101,11 +104,12 @@ class DMChannelShow extends React.Component {
       <div className="text-channel-show">
         <nav className="text-channel-top">
           <h1>{shortenDisplay}</h1>
-          <div>
-            <p>?</p>
-            <p>?</p>
-            <p>?</p>
-          </div>
+          <ul>
+            <a href="https://hongchris96.com/" target="_blank"><FontAwesomeIcon icon={faUser}/></a>
+            <a href="https://github.com/hongchris96/disGuy" target="_blank"><FontAwesomeIcon icon={faGithub}/></a>
+            <a href="https://www.linkedin.com/in/chen-wei-christopher-hong-4b189162/" target="_blank"><FontAwesomeIcon icon={faLinkedin}/></a>
+            <a href="https://angel.co/u/chen-wei-christopher-hong" target="_blank"><FontAwesomeIcon icon={faAngellist}/></a>
+          </ul>
         </nav>
 
         <div className="text-channel-body">
