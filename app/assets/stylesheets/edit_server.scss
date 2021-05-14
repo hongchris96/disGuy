@@ -66,6 +66,22 @@
   transition: 0.5s;
 }
 
+.edit-server-sidebar > .delete-server-disabled {
+  padding: 10px;
+  margin-top: 3px;
+  background-color: rgb(47,49,54);
+  color: rgb(237,71,68);
+  border-radius: 5px;
+  cursor: not-allowed;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-server-sidebar > .delete-server-disabled:hover {
+  background-color: rgb(66,51,55);
+  transition: 0.5s;
+}
+
 // right side
 .edit-server-body {
   background-color: rgb(54,57,63);

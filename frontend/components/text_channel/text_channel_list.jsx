@@ -47,7 +47,9 @@ class TextChannelList extends React.Component {
         </ul>
         <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
           <EditTextChannelContainer 
+            server={this.props.server} 
             serverId={this.props.serverId} 
+            currentUser={this.props.currentUser} 
             channel={this.state.currentTextChannel} 
             closeEditSetting={this.openEditSetting}
             textChannelListProps={this.props}

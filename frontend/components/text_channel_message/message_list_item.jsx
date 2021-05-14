@@ -42,6 +42,30 @@ class TextChannelMessageListItem extends React.Component {
     }
   }
 
+  renderMessageEdit() {
+    if (this.props.message.author_id === this.props.currentUser.id) {
+      return (
+        <p onClick={this.openEditMessage}><img src={window.editURL}/></p>
+      )
+    } else {
+      return (
+        <p className="message-disabled" onClick={this.openEditMessage}><img src={window.editURL}/></p>
+      )
+    }
+  }
+
+  renderMessageDelete() {
+    if (this.props.message.author_id === this.props.currentUser.id) {
+      return (
+        <p onClick={this.handleDelete}><img src={window.trashURL}/></p>
+      )
+    } else {
+      return (
+        <p className="message-disabled" onClick={this.handleDelete}><img src={window.trashURL}/></p>
+      )
+    }
+  }
+
   render(){
     let author;
     let nameParts = this.props.allUsers.filter(user => user.id === this.props.message.author_id)[0].username.split(" ");
@@ -59,8 +83,8 @@ class TextChannelMessageListItem extends React.Component {
           />
         </div>
         <div className={`message-settings ${this.state.messageSettingVis ? "" : "hidden"}`}>
-          <p onClick={this.openEditMessage}><img src={window.editURL}/></p>
-          <p onClick={this.handleDelete}><img src={window.trashURL}/></p>
+          {this.renderMessageEdit()}
+          {this.renderMessageDelete()}
         </div>
       </li>
     );

@@ -1,6 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router";
-import classNames from 'classnames'
+import classNames from 'classnames';
+import {faLock} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 class EditTextChannelForm extends React.Component {
   constructor(props){
@@ -77,6 +79,23 @@ class EditTextChannelForm extends React.Component {
     }
   }
 
+  renderDeleteButton() {
+    if (this.props.server.host_id === this.props.currentUser.id) {
+      return (
+        <p className="delete-server" onClick={this.handleDelete}>
+          Delete Server
+        </p>
+      )
+    } else {
+      return (
+        <p className="delete-server-disabled">
+          Delete Server
+          <span><FontAwesomeIcon icon={faLock}/></span>
+        </p>
+      )
+    }
+  }
+
   render(){
 
     if (this.props.channel === undefined) {
@@ -89,9 +108,7 @@ class EditTextChannelForm extends React.Component {
         <div className="edit-server-sidebar">
           <h1># {this.props.channel.text_channel_name}</h1>
           <p>Overview</p>
-          <p className="delete-server" onClick={this.handleDelete}>
-            Delete Channel
-          </p>
+          {this.renderDeleteButton()}
         </div>
         <div className="edit-server-body">
           <form className="edit-server-form" onSubmit={this.handleSubmit}>
