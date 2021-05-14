@@ -22,6 +22,7 @@
 
 .text-channel-message-list {
   padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .text-channel-message-list > li {
@@ -74,6 +75,10 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.message-settings > p.message-disabled {
+  cursor: not-allowed;
 }
 
 .message-settings > p:first-of-type:hover {
