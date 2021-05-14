@@ -14,8 +14,8 @@ const mapSTP = (state, ownProps) => {
     dmChannel: {
       user1_id: state.session.currentUser.id,
       user2_id: ''
-    }
-    // errors: state.errors
+    },
+    errors: state.errors.dmChannel
   })
 };
 
