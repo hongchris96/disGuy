@@ -35,7 +35,7 @@ class TextChannelMessageListItem extends React.Component {
 
   openEditMessage(e) {
     // e.preventDefault();
-    if (this.props.message.author_id === this.props.currentUser.id) {
+    if (this.props.message.author_id === this.props.currentUser.id || this.props.server.host_id === this.props.currentUser.id) {
       this.setState(prevState => ({
         editMessageVis: !prevState.editMessageVis 
       }));
@@ -43,7 +43,7 @@ class TextChannelMessageListItem extends React.Component {
   }
 
   renderMessageEdit() {
-    if (this.props.message.author_id === this.props.currentUser.id) {
+    if (this.props.message.author_id === this.props.currentUser.id || this.props.server.host_id === this.props.currentUser.id) {
       return (
         <p onClick={this.openEditMessage}><img src={window.editURL}/></p>
       )
@@ -55,7 +55,7 @@ class TextChannelMessageListItem extends React.Component {
   }
 
   renderMessageDelete() {
-    if (this.props.message.author_id === this.props.currentUser.id) {
+    if (this.props.message.author_id === this.props.currentUser.id || this.props.server.host_id === this.props.currentUser.id) {
       return (
         <p onClick={this.handleDelete}><img src={window.trashURL}/></p>
       )
