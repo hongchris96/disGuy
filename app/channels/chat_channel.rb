@@ -30,7 +30,7 @@ class ChatChannel < ApplicationCable::Channel
   def poof(data)
     message = TextChannelMessage.find_by(id: data['message']['id'])
 
-    if message.author.id == data['currentUser']['id']
+    if message.author.id == data['currentUser']['id'] || message.text_channel.server.host_id == data['currentUser']['id']
       if message.destroy
         socket = {message: message, type: 'no_message'}
         ChatChannel.broadcast_to(@channel, socket)

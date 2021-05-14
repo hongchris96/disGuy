@@ -3,8 +3,7 @@ import * as DMChannelAPIUtil from '../../utils/direct_message_channel_api_util';
 export const RECEIVE_DMCHANNELS = "RECEIVE_DMCHANNELS";
 export const RECEIVE_DMCHANNEL = "RECEIVE_DMCHANNEL";
 export const REMOVE_DMCHANNEL = "REMOVE_DMCHANNEL";
-
-// export const RECEIVE_DMCHANNEL_ERRORS = "RECEIVE_DMCHANNEL_ERRORS";
+export const RECEIVE_DMCHANNEL_ERRORS = "RECEIVE_DMCHANNEL_ERRORS";
 
 const receiveDMChannels = dmChannels => ({
   type: RECEIVE_DMCHANNELS,
@@ -21,10 +20,10 @@ const removeDMChannel = dmChannelId => ({
   dmChannelId
 });
 
-// const receiveDMChannelErrors = errors => ({
-//   type: RECEIVE_DMCHANNEL_ERRORS,
-//   errors
-// });
+const receiveDMChannelErrors = errors => ({
+  type: RECEIVE_DMCHANNEL_ERRORS,
+  errors
+});
 
 export const requestDMChannels = () => dispatch => {
   return DMChannelAPIUtil.fetchDirectMessageChannels().then(dmChannels => dispatch(receiveDMChannels(dmChannels)));
@@ -36,7 +35,8 @@ export const requestDMChannel = (dmChannelId) => dispatch => {
 
 export const createDMChannel = (dmChannel) => dispatch => {
   return DMChannelAPIUtil.createDirectMessageChannel(dmChannel)
-    .then(dmChannel => dispatch(receiveDMChannel(dmChannel)));
+    .then(dmChannel => dispatch(receiveDMChannel(dmChannel)))
+    .fail(err => (dispatch(receiveDMChannelErrors(err.responseJSON))));
 };
 
 export const deleteDMChannel = (dmChannelId) => dispatch => {

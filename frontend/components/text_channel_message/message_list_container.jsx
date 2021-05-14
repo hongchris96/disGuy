@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const mapSTP = (state, ownProps) => {
   return {
+    server: state.entities.servers[ownProps.match.params.serverId],
     currentUser: state.session.currentUser,
     allUsers: Object.values(state.entities.users),
     textChannelMessages: Object.values(state.entities.textChannelMessages),
