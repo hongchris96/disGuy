@@ -87,11 +87,11 @@ class ServerShow extends React.Component {
           
         </div>
         <div className={`server-edit ${this.state.editVisible ? "" : "hidden"}`}>
-          <EditServerContainer server={this.props.server} showPageProps={this.props} closeEditSetting={this.openEditServer}/>
+          <EditServerContainer server={this.props.server} currentUser={this.props.currentUser} showPageProps={this.props} closeEditSetting={this.openEditServer}/>
         </div>
 
         <div>
-          <TextChannelListContainer serverId={this.props.server.id} />
+          <TextChannelListContainer serverId={this.props.server.id} server={this.props.server} currentUser={this.props.currentUser}/>
         </div>
 
       </div>
