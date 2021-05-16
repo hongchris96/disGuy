@@ -1,5 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {faGithub, faLinkedin, faAngellist} from "@fortawesome/free-brands-svg-icons";
+import {faUser} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const Home = () => {
   return (
@@ -22,6 +25,9 @@ const Home = () => {
             <Link to="/login">Open disGuy in your browser</Link>
           </div>
         </div>
+
+        <img className="deco2" src={window.splash_deco2}/>
+        <img className="deco1" src={window.splash_deco1}/>
       </div>
       
       <div className="home-div-2">
@@ -75,10 +81,14 @@ const Home = () => {
       <div className="home-div-footer">
         <div>
           <h2>Get to know me</h2>
-          <p>Portfolio</p>
-          <p>Github</p>
-          <p>LinkedIn</p>
-          <p>AngelList</p>
+          <ul>
+            <a href="https://hongchris96.com/" target="_blank"><FontAwesomeIcon icon={faUser}/></a>
+            <a href="https://github.com/hongchris96" target="_blank"><FontAwesomeIcon icon={faGithub}/></a>
+            <a href="https://www.linkedin.com/in/chen-wei-christopher-hong-4b189162/" target="_blank"><FontAwesomeIcon icon={faLinkedin}/></a>
+            <a href="https://angel.co/u/chen-wei-christopher-hong" target="_blank"><FontAwesomeIcon icon={faAngellist}/></a>
+          </ul>
+
+          <p>© Chris Hong</p>
         </div>
       </div>
 
