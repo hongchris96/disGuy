@@ -26,7 +26,7 @@ const Home = () => {
       
       <div className="home-div-2">
         <div>
-          <img src={window.cogURL}/>
+          <img src={window.splash1}/>
           <div className="home-div-text">
             <h2>Create an invite-only place where you belong</h2>
             <p>disGuy servers are organized into topic-based 
@@ -38,7 +38,7 @@ const Home = () => {
 
       <div className="home-div-3">
         <div>
-          <img src={window.cogURL}/>
+          <img src={window.splash2}/>
           <div className="home-div-text">
             <h2>Where hanging out is easy</h2>
             <p>Grab a seat in a voice channel when you’re free. 
@@ -50,7 +50,7 @@ const Home = () => {
 
       <div className="home-div-4">
         <div>
-          <img src={window.cogURL}/>
+          <img src={window.splash3}/>
           <div className="home-div-text">
             <h2>From few to a fandom</h2>
             <p>Get any community running with moderation tools 
@@ -68,7 +68,7 @@ const Home = () => {
               Type hello over chat, see friends talk about their days, or gather 
               up and type hello to each other.</p>
           </div>
-          <img src={window.cogURL}/>
+          <img src={window.splash4}/>
         </div>
       </div>
 
