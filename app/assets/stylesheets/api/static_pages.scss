@@ -37,7 +37,7 @@
 
 .home-div-1 {
   width: 100%;
-  height: 620px;
+  height: 630px;
   // background-image: linear-gradient(to bottom, rgb(44,92,236), rgb(46, 93, 235), rgb(116,148,252));
   background-image: linear-gradient(to bottom, rgb(44,92,236), rgb(64,78,237), rgb(88,101,242));
   color: white;
@@ -83,6 +83,7 @@
   font-size: 18px;
   font-weight: lighter;
   position: relative;
+  top: -30px;
   width: 720px;
   height: 540px;
   // border-bottom: 1px solid black;
@@ -182,8 +183,8 @@
 }
 
 .home-div-2 > div > img {
-  width: 55%;
   height: 100%;
+  width: auto;
 }
 
 .home-div-2 > div > .home-div-text {
@@ -238,8 +239,8 @@
 }
 
 .home-div-3 > div > img {
-  width: 55%;
   height: 100%;
+  width: auto;
 }
 
 .home-div-3 > div > .home-div-text {
@@ -294,8 +295,8 @@
 }
 
 .home-div-4 > div > img {
-  width: 55%;
   height: 100%;
+  width: auto;
 }
 
 .home-div-4 > div > .home-div-text {
@@ -410,20 +411,20 @@
 }
 
 .home-div-footer > div > h2 {
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 900;
   font-family: "Florencesans SC Bold";
   color: rgb(88,101,242);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-top: 60px;
+  margin-top: 80px;
   margin-bottom: 30px;
 }
 
 .home-div-footer > div > ul {
   display: flex;
   flex-direction: row;
-  width: 340px;
+  width: 280px;
   justify-content: space-between;
   align-items: center;
 }
@@ -450,7 +451,7 @@
   width: 100%;
   text-align: center;
   font-size: 16px;
-  margin-top: 60px;
+  margin-top: 90px;
   padding-top: 40px;
   border-top: 1px solid rgb(88,101,242);
 }

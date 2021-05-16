@@ -42,7 +42,7 @@ class SeeInviteLink extends React.Component {
           </div>
           <div className="the-link">
             <label>SEND SERVER INVITE LINK TO A FRIEND</label>
-            <input className="inv-text" type="text" value={this.state.invCode}/>
+            <input className="inv-text" type="text" value={this.state.invCode} readOnly/>
             <button className="copy-button" onClick={this.copy}>{this.state.cbutton}</button>
             <p>This is your invite link. Copy it and send it to your friend.</p>
           </div>
