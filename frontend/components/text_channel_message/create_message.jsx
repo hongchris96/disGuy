@@ -39,7 +39,7 @@ class CreateTextChannelMessageForm extends React.Component {
             type="text" 
             value={this.state.chat_content} 
             onChange={this.updateInput("chat_content")} 
-            placeholder="Type message here"
+            placeholder="Type message here  (Hit Enter to send)"
           />
         </form>
       </div>
