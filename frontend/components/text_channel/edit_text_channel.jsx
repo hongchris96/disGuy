@@ -83,13 +83,13 @@ class EditTextChannelForm extends React.Component {
     if (this.props.server.host_id === this.props.currentUser.id) {
       return (
         <p className="delete-server" onClick={this.handleDelete}>
-          Delete Server
+          Delete Channel
         </p>
       )
     } else {
       return (
         <p className="delete-server-disabled">
-          Delete Server
+          Delete Channel
           <span><FontAwesomeIcon icon={faLock}/></span>
         </p>
       )

@@ -8,7 +8,7 @@ const mapSTP = (state) => ({
   allServers: state.entities.servers,
   allServerIds: Object.keys(state.entities.servers),
   allServerMembers: Object.keys(state.entities.serverMembers),
-  errors: state.errors.server,
+  errors: state.errors.joinServer,
   serverMember: {
     member_id: state.session.currentUser.id, 
     server_id: ""

@@ -31,7 +31,7 @@ class JoinServerForm extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.state.invCode[0] === " ") this.setState({invCode: this.state.invCode.slice(1)});
     if (this.props.errors.length === 0 && this.props.allServerIds.length !== prevProps.allServerIds.length) {
-      this.setState({redirectToCreatedServer: true});
+      this.setState({redirectToJoinedServer: true});
     }
   }
 
@@ -54,7 +54,7 @@ class JoinServerForm extends React.Component {
 
   render(){
 
-    let redirectToServer = this.state.redirectToCreatedServer;
+    let redirectToServer = this.state.redirectToJoinedServer;
     let justJoinedServer = Object.values(this.props.allServers).filter(s => s.invite_code === this.state.invCode);
     let serverLoc = justJoinedServer[0] ? justJoinedServer[0].id : undefined;
     // let serverLast = this.props.allServerIds[this.props.allServerIds.length - 1];

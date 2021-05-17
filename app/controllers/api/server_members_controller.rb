@@ -12,10 +12,12 @@ class Api::ServerMembersController < ApplicationController
     @server = Server.find_by(invite_code: params[:server_member][:invite_code])
     if @server
       @server_member = ServerMember.new({member_id: params[:server_member][:member_id], server_id: @server[:id]})
-      if @server_member.save
+      if @server.host_id == @server_member.member_id
+        render json: ['You are already in that server'], status: 422
+      elsif @server_member.save
         render :show
       else
-        render json: @server_member.errors.full_messages, status: 422
+        render json: ['You are already in that server'], status: 422
       end
     else
       render json: ['There\'s no server with that invite code'], status: 422
