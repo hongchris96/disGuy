@@ -87,7 +87,9 @@
 
 .text-channel-show {
   position: relative;
-  flex-grow: 1;
+  // flex-grow: 1;
+  width: calc(100% - 315px);
+  flex-wrap: nowrap;
   height: inherit;
 }
 
