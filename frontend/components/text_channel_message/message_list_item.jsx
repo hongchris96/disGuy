@@ -75,7 +75,7 @@ class TextChannelMessageListItem extends React.Component {
       <li className="message-list-item" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
         {/* maybe author name but then needs user index in controller */}
         <p>{author}</p>
-        <p>{this.props.message.chat_content}</p>
+        <p className="pmessage" >{this.props.message.chat_content}</p>
         <div className={`edit-message ${this.state.editMessageVis ? "" : "hidden"}`}>
           <EditTextChannelMessageContainer 
             message={this.props.message} 

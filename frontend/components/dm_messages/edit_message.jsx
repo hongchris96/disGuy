@@ -36,6 +36,7 @@ class EditDirectMessageForm extends React.Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <input type="text" value={this.state.chat_content} onChange={this.updateInput("chat_content")}/>
+        <p>Hit Enter to update</p>
         <p onClick={this.handleClose}>cancel</p>
       </form>
     );
