@@ -4,6 +4,10 @@
     <title>DisGuy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <%= favicon_link_tag 'disguy_favicon.png' %>
     <meta property="og:title" content="DisGuy" />
     <meta property='og:image' content="<%= image_url('disGuy_login.png') %>"/>
     <meta property="og:description"
@@ -12,10 +16,6 @@
     <meta property="og:url"
       content="https://disguy.herokuapp.com/#/"
     />
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-
-    <%= favicon_link_tag 'disguy_favicon.png' %>
 
     <script type="text/javascript">
       window.blueLogoURL = "<%= image_url('blue_logo.png') %>";
