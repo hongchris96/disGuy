@@ -72,7 +72,7 @@ class CreateTextChannelForm extends React.Component {
               <img src={window.radioURL}/>
               <div>
                 <h1>Text Channel</h1>
-                <p>Post images, GIFs, stickers, opinions, and puns</p>
+                <p>Type words and send messages for members to see</p>
               </div>
             </div>
           </div>
