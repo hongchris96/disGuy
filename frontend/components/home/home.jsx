@@ -47,9 +47,9 @@ const Home = () => {
           <img src={window.splash2}/>
           <div className="home-div-text">
             <h2>Where hanging out is easy</h2>
-            <p>Grab a seat in a voice channel when you’re free. 
-              Friends in your server can see you’re around and 
-              instantly pop in to talk without having to call.</p>
+            <p>Create any direct messages with other users. 
+              They can see your message, instantly reply
+               and have a private conversation.</p>
           </div>
         </div>
       </div>
@@ -59,9 +59,8 @@ const Home = () => {
           <img src={window.splash3}/>
           <div className="home-div-text">
             <h2>From few to a fandom</h2>
-            <p>Get any community running with moderation tools 
-              and custom member access. Give members special powers, 
-              set up private channels, and more.</p>
+            <p>Host can create, update, delete their own server
+                along with the text channels as they see fit, like a King.</p>
           </div>
         </div>
       </div>
