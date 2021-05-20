@@ -1,7 +1,17 @@
 class User < ApplicationRecord
   validates :username, :email, presence: true, uniqueness: true
+  validate :email_format
   validates :password_digest, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  
+  def email_format
+      email_parts = self.email.split('@')
+      if email_parts.length != 2
+        errors[:email] << "Format is invalid"
+      else
+        errors[:email] << "Format is invalid" if email_parts[1].split('.').length != 2
+      end
+  end
 
   before_validation :ensure_session_token
 
