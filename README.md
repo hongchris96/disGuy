@@ -2,7 +2,7 @@
 
 disGuy is a communication platform with the purpose of creating communities through servers. Within each server, there are channels, allowing server members to chat at the same time without cluttering a single chat. Users are also able to send direct messages to other users in the landing page.
 
-[disGuy Live](https://disguy.herokuapp.com/#/)
+[Currently Offline](https://disguy.herokuapp.com/#/)
 
 ------
 ## Technologies
